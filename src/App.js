@@ -1,5 +1,12 @@
-/* eslint-disable import/no-extraneous-dependencies */
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+
+// Import the necessary components
+import HomePage from './pages/home/Homepage';
+import SignUpPage from './pages/signup/SignUp';
+import SignInPage from './pages/signin/SignIn';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/layout/Layout';
 import Home from './components/pages/Home';
@@ -22,6 +29,13 @@ function App() {
         </Routes>
       </Layout>
     </Router>
+    <div className="App d-flex">
+      <Routes>
+        <Route path="/" element={(<HomePage />)} />
+        <Route path="/signin" element={(<SignInPage />)} />
+        <Route path="/signup" element={(<SignUpPage />)} />
+      </Routes>
+    </div>
   );
 }
 
