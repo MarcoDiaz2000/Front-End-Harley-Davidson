@@ -10,7 +10,7 @@ const HomePage = () => (
     style={{ backgroundImage: `url(${backgroundImage})` }}
   >
     <div className="text-center text-white">
-      <h1 className="text-4xl font-bold text-gray-800 mb-6 log-text">
+      <h1 className="text-4xl font-bold text-white mb-6 log-text bg-gradient-to-r from-green-400 via-green-500 to-green-600 p-4 rounded-lg">
         BOOK YOUR HARLEY DAVIDSON NOW
       </h1>
       <Link to="/signin">
