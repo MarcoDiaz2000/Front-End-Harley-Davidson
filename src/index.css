@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Roboto:wght@400;500;700;900&display=swap');
+
 body {
   margin: 0;
   font-family:
@@ -18,11 +20,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Roboto:wght@400;500;700;900&display=swap');
+}
 
 .active {
   background-color: hsl(74, 85%, 40%);
@@ -36,6 +34,8 @@ body {
 a.small.active {
   background-color: white;
   color: hsl(74, 85%, 40%);
+}
+
 code {
   font-family:
     source-code-pro,
