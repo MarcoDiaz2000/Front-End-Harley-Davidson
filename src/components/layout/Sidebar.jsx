@@ -18,11 +18,12 @@ export default function Sidebar() {
   };
   const id = 1;
   const menuItems = [
-    { to: `/motors/${id}`, label: 'MOTORS', icon: <TwoWheelerIcon /> },
-    { to: `/myReservation/${id}`, label: 'MY RESERVATIONS', icon: <EventAvailableIcon /> },
+    { to: '/motors', label: 'MOTORS', icon: <TwoWheelerIcon /> },
+    { to: '/myReservations', label: 'MY RESERVATIONS', icon: <EventAvailableIcon /> },
     { to: `/reserve/${id}`, label: 'RESERVE', icon: <EventIcon /> },
     { to: `/add/${id}`, label: 'ADD MOTOR', icon: <AddBoxIcon /> },
     { to: `/delete/${id}`, label: 'DELETE', icon: <DeleteForeverIcon /> },
+
   ];
   return (
     <div className="flex flex-col gap-12 sticky top-0 h-screen border-r border-customBorder font-roboto">

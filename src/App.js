@@ -13,10 +13,12 @@ import Delete from './routes/Delete';
 import AddNew from './routes/AddNew';
 import MyReservations from './routes/MyReservations';
 import Reserve from './routes/Reserve';
+import ItemDetail from './routes/ItemDetail';
 
 function App() {
   return (
     <>
+
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/signin" element={<SignInPage />} />
@@ -25,11 +27,13 @@ function App() {
       <Layout>
         <Routes>
 
-          <Route path="/motors/:id" element={<Main />} />
-          <Route path="/myReservation/:id" element={<MyReservations />} />
+          <Route path="/motors" element={<Main />} />
+          <Route path="/myReservations" element={<MyReservations />} />
           <Route path="/reserve/:id" element={<Reserve />} />
           <Route path="/add/:id" element={<AddNew />} />
           <Route path="/delete/:id" element={<Delete />} />
+          <Route path="/motors/:id" element={<ItemDetail />} />
+
         </Routes>
       </Layout>
     </>
