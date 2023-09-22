@@ -5,7 +5,7 @@ import './App.css';
 
 // Import the necessary components
 import HomePage from './pages/home/Homepage';
-import SignUpPage from './pages/signup/SignUp';
+import SignUpPage from './pages/Signup/SignUp';
 import SignInPage from './pages/signin/SignIn';
 
 function App() {
