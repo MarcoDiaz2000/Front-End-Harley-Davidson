@@ -3,7 +3,7 @@
 # 📗 Table of Contents 
 
 - [📖 About the Project](#about-project)
-  - [🚀 Frontend App](#frontend)
+  - [🚀 Back-end App](#back-end)
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
@@ -29,7 +29,7 @@
 The project we built for the Final Project is based on an app to book an appointment to test ride a Harley-Davidson motorcycle. 
 
 ## 🚀 Frontend App <a name="frontend"></a>
-- [Click here to navigate to the Frontend ](https://github.com/Salimer/Final-Capstone-Back-End)
+- [Click here to navigate to the Back-ebd ](https://github.com/Salimer/Final-Capstone-Back-End)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
