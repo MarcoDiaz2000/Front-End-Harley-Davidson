@@ -3,11 +3,13 @@ import API from '../api';
 export const FETCH_MOTORCYCLES = 'BOOK-APPOINTMENT/MOTORCYCLES/FETCH_MOTORCYCLES';
 export const CREATE_MOTORCYCLE = 'BOOK-APPOINTMENT/MOTORCYCLES/CREATE_MOTORCYCLE';
 export const DELETE_MOTORCYCLE = 'BOOK-APPOINTMENT/MOTORCYCLES/DELETE_MOTORCYCLE';
-export const FETCH_SINGLE_MOTORCYCLE = 'BOOK-APPOINTMENT/MOTORCYCLES/FETCH_SINGLE_MOTORCYCLE';
-export const UPDATE_MOTOR = 'BOOK-APPOINTMENT/MOTORCYCLES/UPDATE_MOTOR';
+export const FETCH_MOTORCYCLE_BY_ID = 'BOOK-APPOINTMENT/MOTORCYCLES/FETCH_MOTORCYCLE_BY_ID';
+export const UPDATE_MOTORCYCLE = 'BOOK-APPOINTMENT/MOTORCYCLES/UPDATE_MOTORCYCLE';
+export const MARK_MOTORCYCLE_AS_REMOVED = 'BOOK-APPOINTMENT/MOTORCYCLES/MARK_MOTORCYCLE_AS_REMOVED';
+export const RECOVER_MOTORCYCLE = 'BOOK-APPOINTMENT/MOTORCYCLES/RECOVER_MOTORCYCLE';
 
 export const fetchMotorcycles = () => (dispatch) => {
-  API.fetchMotors((response) => {
+  API.getItems((response) => {
     dispatch({
       type: FETCH_MOTORCYCLES,
       payload: response.data,
@@ -15,8 +17,8 @@ export const fetchMotorcycles = () => (dispatch) => {
   });
 };
 
-export const createMotorcycle = (motorcycle, userId) => (dispatch) => {
-  API.addMotor(motorcycle, userId, (response) => {
+export const createMotorcycle = (motorcycle) => (dispatch) => {
+  API.createItem(motorcycle, (response) => {
     dispatch({
       type: CREATE_MOTORCYCLE,
       payload: response.data,
@@ -25,7 +27,7 @@ export const createMotorcycle = (motorcycle, userId) => (dispatch) => {
 };
 
 export const deleteMotorcycle = (id) => (dispatch) => {
-  API.deleteMotor(id, (response) => {
+  API.deleteItemById(id, (response) => {
     dispatch({
       type: DELETE_MOTORCYCLE,
       payload: id,
@@ -34,45 +36,99 @@ export const deleteMotorcycle = (id) => (dispatch) => {
   });
 };
 
-export const fetchSingleMotorcycle = (id) => (dispatch) => {
-  API.fetchSingleMotor(id, (response) => {
+export const fetchMotorcycleById = (id) => (dispatch) => {
+  API.getItemById(id, (response) => {
     dispatch({
-      type: FETCH_SINGLE_MOTORCYCLE,
+      type: FETCH_MOTORCYCLE_BY_ID,
       payload: response.data,
     });
   });
 };
 
-export const updateMotorcycle = (id, motorcycle) => (dispatch) => {
-  API.updateMotor(id, motorcycle, (response) => {
+export const updateMotorcycle = (id, updatedMotorcycle) => (dispatch) => {
+  API.updateItemById(id, updatedMotorcycle, (response) => {
     dispatch({
-      type: UPDATE_MOTOR,
-      payload: motorcycle,
-      id,
+      type: UPDATE_MOTORCYCLE,
+      payload: response.data,
+    });
+  });
+};
+
+export const markMotorcycleAsRemoved = (id) => (dispatch) => {
+  API.markItemAsRemoved(id, (response) => {
+    dispatch({
+      type: MARK_MOTORCYCLE_AS_REMOVED,
+      payload: id,
       message: response.data,
     });
   });
 };
 
-const initialState = [];
+export const recoverMotorcycle = (id) => (dispatch) => {
+  API.recoverItemById(id, (response) => {
+    dispatch({
+      type: RECOVER_MOTORCYCLE,
+      payload: id,
+      message: response.data,
+    });
+  });
+};
+
+const initialState = {
+  motorcycles: [],
+  selectedMotorcycle: null,
+};
 
 const motorcyclesReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_MOTORCYCLES:
-      return action.payload;
+      return {
+        ...state,
+        motorcycles: action.payload,
+      };
     case CREATE_MOTORCYCLE:
-      return [...state, action.payload];
+      return {
+        ...state,
+        motorcycles: [...state.motorcycles, action.payload],
+      };
     case DELETE_MOTORCYCLE:
-      return state.filter((motorcycle) => motorcycle.id !== action.payload);
-    case FETCH_SINGLE_MOTORCYCLE:
-      return action.payload;
-    case UPDATE_MOTOR:
-      return state.map((motor) => (motor.id === action.id
-        ? {
-          ...motor,
-          ...action.payload,
-        }
-        : motor));
+      return {
+        ...state,
+        motorcycles: state.motorcycles.filter((motorcycle) => motorcycle.id !== action.payload),
+      };
+    case FETCH_MOTORCYCLE_BY_ID:
+      return {
+        ...state,
+        selectedMotorcycle: action.payload,
+      };
+    case UPDATE_MOTORCYCLE:
+      return {
+        ...state,
+        motorcycles: state.motorcycles.map((motorcycle) => (
+          motorcycle.id === action.payload.id
+            ? action.payload
+            : motorcycle
+        )),
+      };
+
+    case RECOVER_MOTORCYCLE:
+      return {
+        ...state,
+        motorcycles: state.motorcycles.map((motorcycle) => (
+          motorcycle.id === action.payload
+            ? { ...motorcycle, removed: false }
+            : motorcycle)),
+      };
+
+    case MARK_MOTORCYCLE_AS_REMOVED:
+      return {
+        ...state,
+        motorcycles: state.motorcycles.map((motorcycle) => (
+          motorcycle.id === action.payload
+            ? { ...motorcycle, removed: true }
+            : motorcycle
+        )),
+      };
     default:
       return state;
   }
