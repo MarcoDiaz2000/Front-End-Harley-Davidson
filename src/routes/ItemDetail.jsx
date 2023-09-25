@@ -1,7 +1,8 @@
 import React from 'react';
+import Details from '../components/motors/Details';
 
 export default function ItemDetail() {
   return (
-    <div>ItemDetail</div>
+    <Details />
   );
 }

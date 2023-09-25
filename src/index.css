@@ -92,3 +92,54 @@ a {
 .info {
   z-index: 3;
 }
+
+/* Custom styles for React Slick arrow buttons */
+
+.slick-prev::before,
+.slick-next::before {
+  color: #94bd0f !important;
+  font-size: 50px !important;
+}
+
+.slick-list {
+  margin: 0 60px !important;
+  background-color: white !important;
+}
+
+.slick-slider {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.slick-prev,
+.slick-next {
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  z-index: 1 !important;
+  width: 30px !important; /* Adjust the width as needed */
+  height: 30px !important; /* Adjust the height as needed */
+}
+
+.slick-prev {
+  left: 5px !important; /* Adjust the left position as needed */
+  color: green !important;
+}
+
+.slick-next {
+  right: 24px !important;
+  color: green !important;/* Adjust the right position as needed */
+}
+
+.card {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  border: none !important;
+}
+
+.slick-track {
+  display: flex !important;
+  gap: 10px;
+}
