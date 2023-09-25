@@ -16,7 +16,7 @@ import ItemDetail from './routes/ItemDetail';
 
 function App() {
   return (
-    <>
+    <div className="bg-bodyBg">
 
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -34,7 +34,7 @@ function App() {
 
         </Routes>
       </Layout>
-    </>
+    </div>
   );
 }
 
