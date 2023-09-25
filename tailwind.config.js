@@ -14,6 +14,7 @@ module.exports = {
         customBorder: '#DDDDDD',
         customIcon: '#443850',
         customBg: '#94bd0f',
+        customDark: '#7f9d1b',
       },
     },
   },

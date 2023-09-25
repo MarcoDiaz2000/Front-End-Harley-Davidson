@@ -1,5 +1,4 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 // Import the necessary components
@@ -26,7 +25,6 @@ function App() {
       </Routes>
       <Layout>
         <Routes>
-
           <Route path="/motors" element={<Main />} />
           <Route path="/myReservations" element={<MyReservations />} />
           <Route path="/reserve/:id" element={<Reserve />} />
