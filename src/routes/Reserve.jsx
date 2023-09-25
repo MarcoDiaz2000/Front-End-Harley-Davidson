@@ -1,7 +1,10 @@
 import React from 'react';
+import ReservationForm from '../components/Reservation/ReservationForm';
 
 export default function Reserve() {
   return (
-    <div>Reserve</div>
+    <div>
+      <ReservationForm />
+    </div>
   );
 }
