@@ -28,7 +28,7 @@ const ReservationForm = () => {
     name: Yup.string().required('Name is required'),
     date: Yup.date().required('Date is required'),
     motorcycle: Yup.string().required('Motorcycle is required'),
-    location: Yup.object().nullable().required('Location is required'), // Update location validation
+    location: Yup.object().nullable().required('Location is required'),
   });
 
   const handleSubmit = async (values, { resetForm }) => {
