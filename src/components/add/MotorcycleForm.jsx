@@ -9,7 +9,7 @@ function MotorcycleForm({ newMotor, handleChange, handleSubmit }) {
           Name:
           <input
             id="name"
-            className="w-full p-1 rounded text-black"
+            className="w-full p-2 rounded text-black"
             type="text"
             name="name"
             onChange={handleChange}
@@ -22,7 +22,7 @@ function MotorcycleForm({ newMotor, handleChange, handleSubmit }) {
           Image URL:
           <input
             id="image"
-            className="w-full p-1 rounded text-black"
+            className="w-full p-2 rounded text-black"
             type="text"
             name="image"
             onChange={handleChange}
@@ -35,7 +35,7 @@ function MotorcycleForm({ newMotor, handleChange, handleSubmit }) {
           Description:
           <textarea
             id="description"
-            className="w-full p-1 rounded text-black"
+            className="w-full p-2 rounded text-black"
             type="text"
             name="description"
             onChange={handleChange}
@@ -48,7 +48,7 @@ function MotorcycleForm({ newMotor, handleChange, handleSubmit }) {
           Deposit:
           <input
             id="deposit"
-            className="w-full p-1 rounded text-black"
+            className="w-full p-2 rounded text-black"
             type="number"
             name="deposit"
             onChange={handleChange}
@@ -61,7 +61,7 @@ function MotorcycleForm({ newMotor, handleChange, handleSubmit }) {
           Finance Fee:
           <input
             id="finance_fee"
-            className="w-full p-1 rounded text-black"
+            className="w-full p-2 rounded text-black"
             type="number"
             name="finance_fee"
             onChange={handleChange}
@@ -74,7 +74,7 @@ function MotorcycleForm({ newMotor, handleChange, handleSubmit }) {
           Option to Purchase Fee:
           <input
             id="option_to_purchase_fee"
-            className="w-full p-1 rounded text-black"
+            className="w-full p-2 rounded text-black"
             type="number"
             name="option_to_purchase_fee"
             onChange={handleChange}
@@ -87,7 +87,7 @@ function MotorcycleForm({ newMotor, handleChange, handleSubmit }) {
           Total Amount Payable:
           <input
             id="total_amount_payable"
-            className="w-full p-1 rounded text-black"
+            className="w-full p-2 rounded text-black"
             type="number"
             name="total_amount_payable"
             onChange={handleChange}
@@ -100,7 +100,7 @@ function MotorcycleForm({ newMotor, handleChange, handleSubmit }) {
           Duration:
           <input
             id="duration"
-            className="w-full p-1 rounded text-black"
+            className="w-full p-2 rounded text-black"
             type="number"
             name="duration"
             onChange={handleChange}
