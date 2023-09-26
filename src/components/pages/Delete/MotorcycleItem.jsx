@@ -1,11 +1,11 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { markMotorcycleAsRemoved, recoverMotorcycle } from '../redux/motorcycles/motorcycles';
 import { toast } from 'react-toastify';
+import { markMotorcycleAsRemoved, recoverMotorcycle } from '../redux/motorcycles/motorcycles';
 
 const MotorcycleItem = ({ motorcycle }) => {
   const dispatch = useDispatch();
-  
+
   const handleDelete = (id) => {
     dispatch(markMotorcycleAsRemoved(id));
     toast.success('Motorcycle marked for deletion');
