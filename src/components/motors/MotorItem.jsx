@@ -4,8 +4,8 @@ import { NavLink } from 'react-router-dom';
 
 export default function MotorItem({ item }) {
   return (
-    <div className="w-full h-80 card">
-      <div className="w-full h-60">
+    <div className="w-full h-96 card">
+      <div className="w-full ">
         <img className="w-full h-auto" src={item.photo} alt="motor" />
       </div>
       <h1 className="font-bold bg-blur">{item.name}</h1>
