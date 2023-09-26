@@ -135,8 +135,12 @@ a {
   display: flex !important;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 10px;
-  border: none !important;
+
+  /* border: none !important; */
+
+  /* background-color: red; */
 }
 
 .slick-track {
