@@ -1,7 +1,10 @@
 import React from 'react';
+import List from '../components/myReservations/list';
 
 export default function MyReservations() {
   return (
-    <div>MyReservations</div>
+    <div>
+      <List />
+    </div>
   );
 }

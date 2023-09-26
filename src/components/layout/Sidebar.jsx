@@ -26,7 +26,7 @@ export default function Sidebar() {
 
   ];
   return (
-    <div className="flex flex-col gap-12 sticky top-0 h-screen border-r border-customBorder font-roboto">
+    <div className="flex flex-col gap-12 sticky top-0 h-screen border-r border-customBorder font-roboto bg-white">
       <div className="flex justify-center mt-4 mb-12 hidden md:flex">
         <span className="text-3xl font-bold">VESPA</span>
       </div>
