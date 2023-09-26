@@ -1,7 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
-import img from '../../images/motor2.png';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchReservations } from '../../redux/reservations/reservations';
+import { fetchMotorcycles } from '../../redux/motorcycles/motorcycles';
+import getItemName from './functions/getItemName';
+import getItemImage from './functions/getItemImage';
+// import img from '../../images/motor2.png';
 
 function generateUniqueKey() {
   // Generate a random unique key
@@ -9,91 +14,22 @@ function generateUniqueKey() {
 }
 
 export default function List() {
-  const allReservations = [
-    {
-      id: 1,
-      name: 'Bike 1',
-      username_id: '1',
-      item_id: '1',
-      city: 'London',
-      date: '12-12-2012',
-      description: 'Description for Bike 1',
-      removed: false,
-      image: img,
-    },
-    {
-      id: 2,
-      name: 'Bike 2',
-      username_id: '1',
-      item_id: '2',
-      city: 'London',
-      date: '12-12-2012',
-      description: 'Description for Bike 2',
-      removed: false,
-      image: img,
-    },
-    {
-      id: 3,
-      name: 'Bike 3',
-      username_id: '1',
-      item_id: '3',
-      city: 'London',
-      date: '12-12-2012',
-      description: 'Description for Bike 3',
-      removed: false,
-      image: img,
-    },
-    {
-      id: 4,
-      name: 'Bike 4',
-      username_id: '1',
-      item_id: '4',
-      city: 'London',
-      date: '12-12-2012',
-      description: 'Description for Bike 4',
-      removed: false,
-      image: img,
-    },
-    {
-      id: 5,
-      name: 'Bike 5',
-      username_id: '1',
-      item_id: '5',
-      city: 'London',
-      date: '12-12-2012',
-      description: 'Description for Bike 5',
-      removed: true,
-      image: img,
-    },
-    {
-      id: 6,
-      name: 'Bike 6',
-      username_id: '1',
-      item_id: '6',
-      city: 'London',
-      date: '12-12-2012',
-      description: 'Description for Bike 5',
-      removed: true,
-      image: img,
-    },
-    {
-      id: 7,
-      name: 'Bike 7',
-      username_id: '1',
-      item_id: '5',
-      city: 'London',
-      date: '12-12-2012',
-      description: 'Description for Bike 5',
-      removed: true,
-      image: img,
-    },
-  ];
+  const dispatch = useDispatch();
+  const allReservations = useSelector((state) => state.reservations.reservations);
+  const allItems = useSelector((state) => state.motorcycles.motorcycles);
+
+  useEffect(() => {
+    dispatch(fetchReservations(1));
+    if (allItems.length === 0) dispatch(fetchMotorcycles());
+  }, [dispatch, allItems]);
 
   // Define the number of reservations per page
   const reservationsPerPage = 5;
 
   // Calculate the total number of pages
-  const totalPages = Math.ceil(allReservations.length / reservationsPerPage);
+  const totalPages = allReservations
+    ? Math.ceil(allReservations.length / reservationsPerPage)
+    : 0;
 
   // Use state to keep track of the current page
   const [currentPage, setCurrentPage] = useState(1);
@@ -103,7 +39,7 @@ export default function List() {
   const endIndex = startIndex + reservationsPerPage;
 
   // Get the reservations for the current page
-  const reservations = allReservations.slice(startIndex, endIndex);
+  const reservations = allReservations ? allReservations.slice(startIndex, endIndex) : [];
 
   // Function to handle page navigation
   const handlePageChange = (page) => {
@@ -129,10 +65,10 @@ export default function List() {
             <tr key={reservation.id}>
               <td className="border border-gray-300 hidden lg:table-cell">
                 <div className=" bg-customBg flex justify-center items-center">
-                  <img className="h-40" src={reservation.image} alt="motor" />
+                  <img className="h-40" src={getItemImage(allItems, reservation)} alt="motor" />
                 </div>
               </td>
-              <td className="border border-gray-300 md:px-4 px-2 py-2 text-center">{reservation.name}</td>
+              <td className="border border-gray-300 md:px-4 px-2 py-2 text-center">{getItemName(allItems, reservation)}</td>
               <td className="border border-gray-300 md:px-4 px-2 py-2 text-center">{reservation.date}</td>
               <td className="border border-gray-300 md:px-4 px-2 py-2 md:table-cell text-center">{reservation.city}</td>
               <td className="border border-gray-300 md:px-4 px-2 py-2 hidden md:table-cell text-center">
