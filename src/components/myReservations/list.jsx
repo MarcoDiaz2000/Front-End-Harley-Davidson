@@ -7,7 +7,7 @@ export default function List() {
   const reservations = [
     {
       id: 1,
-      name: 'Bike 1',
+      name: 'Bike 1 asdlkfj akldsf jal',
       username_id: '1',
       item_id: '1',
       city: 'London',
@@ -63,26 +63,28 @@ export default function List() {
   ];
 
   return (
-    <table className="border-collapse border border-gray-300 mx-auto mt-12 ">
+    <table className="border-collapse border border-gray-300 mx-auto mt-12 bg-white drop-shadow-md">
       <thead>
-        <tr>
-          <th className="border border-gray-300 px-4 py-2 bg-customBg text-white hidden lg:table-cell">Bike</th>
-          <th className="border border-gray-300 px-4 py-2 bg-customBg text-white">Bike</th>
-          <th className="border border-gray-300 px-4 py-2 bg-customBg text-white">Date</th>
-          <th className="border border-gray-300 px-4 py-2 bg-customBg text-white md:table-cell">City</th>
-          <th className="border border-gray-300 px-4 py-2 bg-customBg text-white hidden md:table-cell">
-            Item
-            <br />
-            status
+        <tr className="text-center">
+          <th className="border border-gray-300 px-4 py-4 bg-customBg text-white hidden lg:table-cell">Thumbnail</th>
+          <th className="border border-gray-300 px-4 py-4 bg-customBg text-white">Bike</th>
+          <th className="border border-gray-300 px-4 py-4 bg-customBg text-white">Date</th>
+          <th className="border border-gray-300 px-4 py-4 bg-customBg text-white md:table-cell">City</th>
+          <th className="border border-gray-300 px-4 py-4 bg-customBg text-white hidden md:table-cell">
+            Stat
           </th>
         </tr>
       </thead>
       <tbody>
         {reservations.map((reservation) => (
           <tr key={reservation.id}>
-            <td className="border border-gray-300 px-4 py-2 hidden lg:table-cell"><img className="w-full h-auto" src={reservation.image} alt="motor" /></td>
-            <td className="border border-gray-300 px-4 py-2">{reservation.name}</td>
-            <td className="border border-gray-300 px-4 py-2">{reservation.date}</td>
+            <td className="border border-gray-300 px-4 py-2 hidden lg:table-cell">
+              <div className=" bg-customBg flex justify-center items-center rounded-lg">
+                <img className="rounded-lg h-40" src={reservation.image} alt="motor" />
+              </div>
+            </td>
+            <td className="border border-gray-300 md:px-4 sm:px-1 py-2 text-center">{reservation.name}</td>
+            <td className="border border-gray-300 px-4 py-2 text-center">{reservation.date}</td>
             <td className="border border-gray-300 px-4 py-2 md:table-cell">{reservation.city}</td>
             <td className="border border-gray-300 px-4 py-2 hidden md:table-cell text-center">
               {reservation.removed ? (
