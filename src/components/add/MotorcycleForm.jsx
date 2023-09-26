@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function MotorcycleForm({ newMotor, handleChange, handleSubmit }) {
   return (
     <form>
-      <div className="mb-2">
+      <div className="mb-3">
         <label htmlFor="name" className="text-white block mb-2">
           Name:
           <input
@@ -17,7 +17,7 @@ function MotorcycleForm({ newMotor, handleChange, handleSubmit }) {
           />
         </label>
       </div>
-      <div className="mb-2">
+      <div className="mb-3">
         <label htmlFor="image" className="text-white block mb-2">
           Image URL:
           <input
@@ -30,7 +30,7 @@ function MotorcycleForm({ newMotor, handleChange, handleSubmit }) {
           />
         </label>
       </div>
-      <div className="mb-2">
+      <div className="mb-3">
         <label htmlFor="description" className="text-white block mb-2">
           Description:
           <textarea
@@ -43,7 +43,7 @@ function MotorcycleForm({ newMotor, handleChange, handleSubmit }) {
           />
         </label>
       </div>
-      <div className="mb-2">
+      <div className="mb-3">
         <label htmlFor="deposit" className="text-white block mb-2">
           Deposit:
           <input
@@ -56,7 +56,7 @@ function MotorcycleForm({ newMotor, handleChange, handleSubmit }) {
           />
         </label>
       </div>
-      <div className="mb-2">
+      <div className="mb-3">
         <label htmlFor="finance_fee" className="text-white block mb-2">
           Finance Fee:
           <input
@@ -69,7 +69,7 @@ function MotorcycleForm({ newMotor, handleChange, handleSubmit }) {
           />
         </label>
       </div>
-      <div className="mb-2">
+      <div className="mb-3">
         <label htmlFor="option_to_purchase_fee" className="text-white block mb-2">
           Option to Purchase Fee:
           <input
@@ -82,7 +82,7 @@ function MotorcycleForm({ newMotor, handleChange, handleSubmit }) {
           />
         </label>
       </div>
-      <div className="mb-2">
+      <div className="mb-3">
         <label htmlFor="total_amount_payable" className="text-white block mb-2">
           Total Amount Payable:
           <input
@@ -95,7 +95,7 @@ function MotorcycleForm({ newMotor, handleChange, handleSubmit }) {
           />
         </label>
       </div>
-      <div className="mb-2">
+      <div className="mb-3">
         <label htmlFor="duration" className="text-white block mb-2">
           Duration:
           <input
