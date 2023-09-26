@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircle } from '@fortawesome/free-solid-svg-icons';
+
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchReservations } from '../../redux/reservations/reservations';
 import { fetchMotorcycles } from '../../redux/motorcycles/motorcycles';
-import getItemName from './functions/getItemName';
-import getItemImage from './functions/getItemImage';
+import Reservation from './reservation';
 import Pagination from './pagination'; // Import the Pagination component
 
 export default function List() {
@@ -57,23 +55,7 @@ export default function List() {
         </thead>
         <tbody>
           {reservations.map((reservation) => (
-            <tr key={reservation.id}>
-              <td className="border border-gray-300 hidden lg:table-cell">
-                <div className=" bg-customBg flex justify-center items-center">
-                  <img className="h-40" src={getItemImage(allItems, reservation)} alt="motor" />
-                </div>
-              </td>
-              <td className="border border-gray-300 md:px-4 px-2 py-2 text-center">{getItemName(allItems, reservation)}</td>
-              <td className="border border-gray-300 md:px-4 px-2 py-2 text-center">{reservation.date}</td>
-              <td className="border border-gray-300 md:px-4 px-2 py-2 md:table-cell text-center">{reservation.city}</td>
-              <td className="border border-gray-300 md:px-4 px-2 py-2 hidden md:table-cell text-center">
-                {reservation.removed ? (
-                  <FontAwesomeIcon icon={faCircle} style={{ color: '#f50000' }} />
-                ) : (
-                  <FontAwesomeIcon icon={faCircle} style={{ color: '#22cc00' }} />
-                )}
-              </td>
-            </tr>
+            <Reservation key={reservation.id} reservation={reservation} allItems={allItems} />
           ))}
         </tbody>
       </table>
