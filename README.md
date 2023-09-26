@@ -28,8 +28,8 @@
 
 The project we built for the Final Project is based on an app to book an appointment to test ride a Harley-Davidson motorcycle. 
 
-## 🚀 Frontend App <a name="frontend"></a>
-- [Click here to navigate to the Back-ebd ](https://github.com/Salimer/Final-Capstone-Back-End)
+## 🚀 Backend App <a name="back-end"></a>
+- [Click here to navigate to the Backend ](https://github.com/Salimer/Final-Capstone-Back-End)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -160,7 +160,7 @@ If you found this project helpful, consider giving a ⭐️!
 
 ### Acknowledgments
 
-I would like to express my deepest gratitude to all the individuals and institutions that have contributed to making this project possible.
+We would like to express our deepest gratitude to all the people and institutions that have contributed to make this project possible.
 
 #### Development Team
 - **Sumeya Ibrahim**: Thank you for your constant support and your incredible problem-solving skills. Your knowledge and experience have been invaluable.
