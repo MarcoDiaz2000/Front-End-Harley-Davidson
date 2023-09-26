@@ -14,6 +14,7 @@ function MotorcycleForm({ newMotor, handleChange, handleSubmit }) {
             name="name"
             onChange={handleChange}
             value={newMotor.name}
+            required
           />
         </label>
       </div>
@@ -108,9 +109,15 @@ function MotorcycleForm({ newMotor, handleChange, handleSubmit }) {
           />
         </label>
       </div>
-      <button type="button" onClick={handleSubmit} className="bg-customYellow text-white p-3 rounded hover:bg-customDark shadow-md">
-        Add New Harley
-      </button>
+      <div className="flex justify-center">
+        <button
+          type="button"
+          onClick={handleSubmit}
+          className="bg-customYellow text-white py-3 px-12 rounded hover:bg-customDark shadow-md"
+        >
+          Add New Harley
+        </button>
+      </div>
     </form>
   );
 }
