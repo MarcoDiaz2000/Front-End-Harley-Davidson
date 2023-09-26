@@ -113,7 +113,7 @@ function MotorcycleForm({ newMotor, handleChange, handleSubmit }) {
       </button>
     </form>
   );
-} 
+}
 
 MotorcycleForm.propTypes = {
   newMotor: PropTypes.shape({
