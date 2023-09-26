@@ -6,12 +6,7 @@ import { fetchReservations } from '../../redux/reservations/reservations';
 import { fetchMotorcycles } from '../../redux/motorcycles/motorcycles';
 import getItemName from './functions/getItemName';
 import getItemImage from './functions/getItemImage';
-// import img from '../../images/motor2.png';
-
-function generateUniqueKey() {
-  // Generate a random unique key
-  return `button_${Math.random().toString(36).substring(2)}`;
-}
+import Pagination from './pagination'; // Import the Pagination component
 
 export default function List() {
   const dispatch = useDispatch();
@@ -83,23 +78,12 @@ export default function List() {
         </tbody>
       </table>
 
-      {/* Pagination controls */}
-      <div className="flex justify-center my-4">
-        {Array.from({ length: totalPages }).map((_, index) => (
-          <button
-            type="button"
-            key={generateUniqueKey()}
-            className={`mx-2 px-4 py-2 border ${
-              currentPage === index + 1
-                ? 'bg-customBg text-white'
-                : 'border-gray-300 hover:bg-customBg hover:text-white'
-            }`}
-            onClick={() => handlePageChange(index + 1)}
-          >
-            {index + 1}
-          </button>
-        ))}
-      </div>
+      {/* Use the Pagination component */}
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={handlePageChange}
+      />
     </div>
   );
 }
