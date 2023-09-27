@@ -113,9 +113,9 @@ function MotorcycleForm({ newMotor, handleChange, handleSubmit }) {
         <button
           type="button"
           onClick={handleSubmit}
-          className="bg-orange-500 text-white py-3 px-12 rounded hover:bg-orange-700 shadow-md font-helvetica font-bold"
+          className="bg-harleyOrange text-white py-3 px-12 rounded hover:bg-orange-700 shadow-md font-helvetica font-bold"
         >
-          Add New Harley
+          Add New Motorcycle
         </button>
       </div>
     </form>

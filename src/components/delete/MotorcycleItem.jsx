@@ -18,7 +18,7 @@ const MotorcycleItem = ({ motorcycle }) => {
   };
 
   return (
-    <li className={`flex justify-between items-center p-2 my-2 rounded-lg transform transition duration-500 hover:scale-105 ${motorcycle.removed ? 'bg-harleyOrange shadow-white-lg' : 'bg-black shadow-white-lg'}`}>
+    <li className={`flex justify-between items-center p-2 my-2 rounded-lg transform transition duration-500 hover:scale-105 ${motorcycle.removed ? 'bg-harleyOrange white-shadow-i' : 'bg-black white-shadow-i'}`}>
       <span className="font-helvetica text-white font-bold">{motorcycle.name}</span>
       <button
         type="button"

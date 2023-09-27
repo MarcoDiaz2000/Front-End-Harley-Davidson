@@ -138,5 +138,12 @@ a {
   padding-left: 20px;
   padding-right: 20px;
   box-shadow: 2px 4px 6px 2px rgba(255, 255, 255, 0.7),
-    2px 2px 4px 2px rgba(255, 255, 255, 0.7) !important;
+    2px 2px 4px 1px rgba(255, 255, 255, 0.7) !important;
+}
+
+.white-shadow-i {
+  padding-left: 20px;
+  padding-right: 20px;
+  box-shadow: 1px 1px 1px 1px rgba(255, 255, 255, 0.5),
+    1px 1px 1px 1px rgba(255, 255, 255, 0.7) !important;
 }
