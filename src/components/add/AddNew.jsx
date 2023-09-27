@@ -26,6 +26,11 @@ export default function AddNew() {
   };
 
   const handleSubmit = () => {
+    if (!newMotor.name || newMotor.name.trim() === '') {
+      toast.error('The name field is required.'); // Usando toast para la validación
+      return;
+    }
+
     dispatch(createMotorcycle(newMotor));
     toast.success('New motorcycle successfully added');
     setNewMotor({
