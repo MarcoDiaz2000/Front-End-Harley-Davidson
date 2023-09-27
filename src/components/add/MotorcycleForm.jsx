@@ -6,7 +6,7 @@ function MotorcycleForm({ newMotor, handleChange, handleSubmit }) {
     <form>
       <div className="mb-3">
         <label htmlFor="name" className="text-white block mb-2 font-helvetica font-bold">
-          Name:
+          Name *:
           <input
             id="name"
             className="w-full p-2 rounded text-black"
