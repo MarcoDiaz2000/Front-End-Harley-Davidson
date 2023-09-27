@@ -6,17 +6,8 @@
 
 body {
   margin: 0;
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    'Roboto',
-    'Oxygen',
-    'Ubuntu',
-    'Cantarell',
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -37,22 +28,17 @@ a.small.active {
 }
 
 code {
-  font-family:
-    source-code-pro,
-    Menlo,
-    Monaco,
-    Consolas,
-    'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
 @font-face {
   font-family: 'vespa';
-  src:
-    url('./fonts/webfonts_vespa/vespa.ttf.woff') format('woff'),
+  src: url('./fonts/webfonts_vespa/vespa.ttf.woff') format('woff'),
     url('./fonts/webfonts_vespa/vespa.ttf.svg#vespa') format('svg'),
     url('./fonts/webfonts_vespa/vespa.ttf.eot'),
-    url('./fonts/webfonts_vespa/vespa.ttf.eot?#iefix') format('embedded-opentype');
+    url('./fonts/webfonts_vespa/vespa.ttf.eot?#iefix')
+      format('embedded-opentype');
   font-weight: normal;
   font-style: normal;
 }
@@ -128,7 +114,7 @@ a {
 
 .slick-next {
   right: 24px !important;
-  color: green !important;/* Adjust the right position as needed */
+  color: green !important; /* Adjust the right position as needed */
 }
 
 .card {
@@ -146,4 +132,11 @@ a {
 .slick-track {
   display: flex !important;
   gap: 10px;
+}
+
+.white-shadow {
+  padding-left: 20px;
+  padding-right: 20px;
+  box-shadow: 2px 4px 6px 2px rgba(255, 255, 255, 0.7),
+    2px 2px 4px 2px rgba(255, 255, 255, 0.7) !important;
 }

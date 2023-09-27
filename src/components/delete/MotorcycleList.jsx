@@ -12,7 +12,7 @@ const MotorcycleList = () => {
   }, [dispatch]);
 
   return (
-    <ul>
+    <ul className="divide-y divide-customBorder">
       {motorcycles.map((motorcycle) => (
         <MotorcycleItem key={motorcycle.id} motorcycle={motorcycle} />
       ))}
