@@ -18,11 +18,13 @@ const MotorcycleItem = ({ motorcycle }) => {
   };
 
   return (
-    <li className={`flex justify-between items-center p-2 my-2 rounded-lg transform transition duration-500 hover:scale-105 ${motorcycle.removed ? 'bg-harleyOrange white-shadow-i' : 'bg-black white-shadow-i'}`}>
+    <li className={`flex flex-col sm:flex-row justify-between items-center p-2 my-2 rounded-lg transform transition duration-500 hover:scale-105 ${motorcycle.removed ? 'bg-harleyOrange white-shadow-i' : 'bg-black white-shadow-i'}`}>
       <span className="font-helvetica text-white font-bold">{motorcycle.name}</span>
       <button
         type="button"
-        onClick={() => (motorcycle.removed ? handleRecover(motorcycle.id) : handleDelete(motorcycle.id))}
+        onClick={() => (motorcycle.removed
+          ? handleRecover(motorcycle.id)
+          : handleDelete(motorcycle.id))}
         className={`bg-black p-2 rounded hover:bg-green-200 font-helvetica font-bold ${motorcycle.removed ? 'text-white' : 'text-harleyOrange'}`}
       >
         {motorcycle.removed ? 'Recover' : 'Delete'}
