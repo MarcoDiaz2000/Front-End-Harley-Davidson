@@ -4,8 +4,11 @@ import {
 } from 'formik';
 import * as Yup from 'yup';
 import Select from 'react-select';
+import { useDispatch } from 'react-redux';
+import { createReservation } from '../../redux/reservations/reservation';
 
 const ReservationForm = () => {
+  const dispatch = useDispatch();
   const initialValues = {
     name: '',
     date: '',
@@ -32,8 +35,12 @@ const ReservationForm = () => {
   });
 
   const handleSubmit = async (values, { resetForm }) => {
+    // Dispatch the action to add the reservation to Redux store
+    dispatch(createReservation(values));
+
     // Handle form submission here, e.g., send data to an API or perform other actions
     console.log('Form data:', values);
+
     // Clear form fields
     resetForm();
   };
