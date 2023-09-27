@@ -15,6 +15,7 @@ module.exports = {
         customIcon: '#443850',
         customBg: '#94bd0f',
         customDark: '#7f9d1b',
+        bodyBg: '#f1f1f1',
       },
     },
   },
