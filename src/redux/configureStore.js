@@ -3,7 +3,7 @@ import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 
 import motorcyclesReducer from './motorcycles/motorcycles';
-import reservationsReducer from './reservations/reservations';
+import reservationsReducer from './reservations/reservation';
 import usersReducer from './users/users';
 
 const rootReducer = combineReducers({
