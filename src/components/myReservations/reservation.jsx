@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
 import getItemName from './functions/getItemName';
 import getItemImage from './functions/getItemImage';
+import getItemStat from './functions/getItemStat';
 
 export default function Reservation({ reservation, allItems }) {
   return (
@@ -17,7 +18,7 @@ export default function Reservation({ reservation, allItems }) {
       <td className="border border-gray-300 md:px-4 px-2 py-2 text-center">{reservation.date}</td>
       <td className="border border-gray-300 md:px-4 px-2 py-2 md:table-cell text-center">{reservation.city}</td>
       <td className="border border-gray-300 md:px-4 px-2 py-2 hidden md:table-cell text-center">
-        {reservation.removed ? (
+        {getItemStat(allItems, reservation) ? (
           <FontAwesomeIcon icon={faCircle} style={{ color: '#f50000' }} />
         ) : (
           <FontAwesomeIcon icon={faCircle} style={{ color: '#22cc00' }} />
