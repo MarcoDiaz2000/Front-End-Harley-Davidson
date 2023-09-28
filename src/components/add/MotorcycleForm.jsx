@@ -5,7 +5,7 @@ function MotorcycleForm({ newMotor, handleChange, handleSubmit }) {
   return (
     <form>
       <div className="mb-3">
-        <label htmlFor="name" className="text-white block mb-2 font-helvetica font-bold">
+        <label htmlFor="name" className="text-white block mb-2 font-roboto font-bold">
           Name *:
           <input
             id="name"
@@ -19,11 +19,11 @@ function MotorcycleForm({ newMotor, handleChange, handleSubmit }) {
         </label>
       </div>
       <div className="mb-3">
-        <label htmlFor="image" className="text-white block mb-2 font-helvetica font-bold">
+        <label htmlFor="image" className="text-white block mb-2 font-roboto font-bold">
           Image URL:
           <input
             id="image"
-            className="w-full p-2 rounded text-black font-helvetica font-bold"
+            className="w-full p-2 rounded text-black font-roboto font-bold"
             type="text"
             name="image"
             onChange={handleChange}
@@ -32,11 +32,11 @@ function MotorcycleForm({ newMotor, handleChange, handleSubmit }) {
         </label>
       </div>
       <div className="mb-3">
-        <label htmlFor="description" className="text-white block mb-2 font-helvetica font-bold">
+        <label htmlFor="description" className="text-white block mb-2 font-roboto font-bold">
           Description:
           <textarea
             id="description"
-            className="w-full p-2 rounded text-black font-helvetica font-bold"
+            className="w-full p-2 rounded text-black font-roboto font-bold"
             type="text"
             name="description"
             onChange={handleChange}
@@ -45,7 +45,7 @@ function MotorcycleForm({ newMotor, handleChange, handleSubmit }) {
         </label>
       </div>
       <div className="mb-3">
-        <label htmlFor="deposit" className="text-white block mb-2 font-helvetica font-bold">
+        <label htmlFor="deposit" className="text-white block mb-2 font-roboto font-bold">
           Deposit:
           <input
             id="deposit"
@@ -58,7 +58,7 @@ function MotorcycleForm({ newMotor, handleChange, handleSubmit }) {
         </label>
       </div>
       <div className="mb-3">
-        <label htmlFor="finance_fee" className="text-white block mb-2 font-helvetica font-bold">
+        <label htmlFor="finance_fee" className="text-white block mb-2 font-roboto font-bold">
           Finance Fee:
           <input
             id="finance_fee"
@@ -71,7 +71,7 @@ function MotorcycleForm({ newMotor, handleChange, handleSubmit }) {
         </label>
       </div>
       <div className="mb-3">
-        <label htmlFor="option_to_purchase_fee" className="text-white block mb-2 font-helvetica font-bold">
+        <label htmlFor="option_to_purchase_fee" className="text-white block mb-2 font-roboto font-bold">
           Option to Purchase Fee:
           <input
             id="option_to_purchase_fee"
@@ -84,7 +84,7 @@ function MotorcycleForm({ newMotor, handleChange, handleSubmit }) {
         </label>
       </div>
       <div className="mb-3">
-        <label htmlFor="total_amount_payable" className="text-white block mb-2 font-helvetica font-bold">
+        <label htmlFor="total_amount_payable" className="text-white block mb-2 font-roboto font-bold">
           Total Amount Payable:
           <input
             id="total_amount_payable"
@@ -97,7 +97,7 @@ function MotorcycleForm({ newMotor, handleChange, handleSubmit }) {
         </label>
       </div>
       <div className="mb-3">
-        <label htmlFor="duration" className="text-white block mb-2 font-helvetica font-bold">
+        <label htmlFor="duration" className="text-white block mb-2 font-roboto font-bold">
           Duration:
           <input
             id="duration"
@@ -113,7 +113,7 @@ function MotorcycleForm({ newMotor, handleChange, handleSubmit }) {
         <button
           type="button"
           onClick={handleSubmit}
-          className="bg-harleyOrange text-white py-3 px-12 rounded hover:bg-orange-700 shadow-md font-helvetica font-bold"
+          className="bg-harleyOrange text-white py-3 px-12 rounded hover:bg-orange-700 shadow-md font-roboto font-bold"
         >
           Add New Motorcycle
         </button>
