@@ -8,6 +8,7 @@ module.exports = {
       fontFamily: {
         'dancing-script': ['Dancing Script', 'cursive'],
         roboto: ['Roboto', 'sans-serif'],
+        helvetica: ['Helvetica', 'sans-serif'],
       },
       colors: {
         customYellow: 'rgba(151, 191, 15, 0.5)',
@@ -16,6 +17,7 @@ module.exports = {
         customBg: '#94bd0f',
         customDark: '#7f9d1b',
         bodyBg: '#f1f1f1',
+        harleyOrange: '#ff6600',
       },
     },
   },

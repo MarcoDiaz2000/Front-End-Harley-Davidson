@@ -52,7 +52,8 @@ code {
     url('./fonts/webfonts_vespa/vespa.ttf.woff') format('woff'),
     url('./fonts/webfonts_vespa/vespa.ttf.svg#vespa') format('svg'),
     url('./fonts/webfonts_vespa/vespa.ttf.eot'),
-    url('./fonts/webfonts_vespa/vespa.ttf.eot?#iefix') format('embedded-opentype');
+    url('./fonts/webfonts_vespa/vespa.ttf.eot?#iefix')
+    format('embedded-opentype');
   font-weight: normal;
   font-style: normal;
 }
@@ -128,7 +129,7 @@ a {
 
 .slick-next {
   right: 24px !important;
-  color: green !important;/* Adjust the right position as needed */
+  color: green !important; /* Adjust the right position as needed */
 }
 
 .card {
@@ -146,4 +147,20 @@ a {
 .slick-track {
   display: flex !important;
   gap: 10px;
+}
+
+.white-shadow {
+  padding-left: 20px;
+  padding-right: 20px;
+  box-shadow:
+    4px 6px 8px 4px rgba(194, 190, 190, 0.9),
+    4px 6px 8px 4px rgba(203, 201, 201, 0.9) !important;
+}
+
+.white-shadow-i {
+  padding-left: 20px;
+  padding-right: 20px;
+  box-shadow:
+    1px 1px 1px 1px rgba(137, 136, 136, 0.5),
+    1px 1px 1px 1px rgba(134, 134, 134, 0.7) !important;
 }
