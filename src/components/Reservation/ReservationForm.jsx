@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {
   Formik, Form, Field, ErrorMessage,
 } from 'formik';
-// import * as Yup from 'yup';
+import * as Yup from 'yup';
 import Select from 'react-select';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
@@ -36,14 +36,21 @@ const ReservationForm = () => {
   };
 
   const handleSubmit = (values, { setSubmitting }) => {
-    const updatedValues = { ...values };
-    updatedValues.city = selectedCity.value;
-    if (selectedItem && selectedItem.value) {
-      updatedValues.item_id = selectedItem.value;
+    if (!selectedCity || (filteredMotorcycles.length === 0 && !selectedItem)) {
+      // Handle the case when any value is empty
+      toast.error('Please fill in all the required fields');
+      setSubmitting(false);
+      return;
     }
-    dispatch(createReservation(values));
-    toast.success('you successfully reserved a Motorbike');
-    console.log(values);
+    // Proceed with creating the reservation
+    const updatedValues = {
+      ...values,
+      city: selectedCity.value,
+      item_id: selectedItem ? selectedItem.value : values.item_id,
+    };
+    dispatch(createReservation(updatedValues));
+    toast.success('You have successfully reserved a Motorbike');
+    console.log(updatedValues);
     setSubmitting(false);
   };
 
@@ -65,27 +72,24 @@ const ReservationForm = () => {
       label: motor.name,
     }));
 
-  // const validationSchema = Yup.object().shape({
-  //   user_id: Yup.number().required('user id is required'),
-  //   date: Yup.date().required('Date is required'),
-  //   // city: Yup.object().required('Location is required'),
-  //   // item_id: Yup.object().required('Motorbike is required'),
-
-  // });
+  const validationSchema = Yup.object().shape({
+    user_id: Yup.number().required('user id is required'),
+    date: Yup.date().required('Date is required'),
+  });
 
   return (
-    <div className="flex flex-col mx-auto p-4">
-      <h2 className="text-2xl font-semibold mb-4">
+    <div className="flex flex-col mx-auto  p-4">
+      <h2 className="text-2xl text-white font-semibold mb-4">
         Reservation
         {filteredMotorcycles.name}
       </h2>
       <Formik
         initialValues={initialValues}
-        // validationSchema={validationSchema}
+        validationSchema={validationSchema}
         onSubmit={handleSubmit}
       >
         <Form>
-          <div className="mb-4">
+          <div className="mb-4 hidden">
             <label htmlFor="name" className="block text-gray-600">Name:</label>
             <Field
               type="number"
@@ -93,7 +97,7 @@ const ReservationForm = () => {
               name="user_id"
               placeholder="name"
               value={initialValues.user_id}
-              className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500"
+              className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none  focus:border-blue-500  bg-inputBg focus:bg-inputBg"
             />
             <ErrorMessage name="name" component="div" className="text-red-600" />
           </div>
@@ -103,7 +107,7 @@ const ReservationForm = () => {
               type="date"
               id="date"
               name="date"
-              className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500"
+              className="w-full px-4 py-2 rounded-md text-white bg-inputBg focus:bg-inputBg border-gray-300 focus:outline-none focus:border-blue-500"
             />
             <ErrorMessage name="date" component="div" className="text-red-600" />
           </div>
@@ -114,7 +118,7 @@ const ReservationForm = () => {
                 type="text"
                 id="item_id"
                 name="item_id"
-                className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500"
+                className="w-full px-4 py-2 rounded-md text-white focus:outline-none focus:border-blue-500  bg-inputBg focus:bg-inputBg"
                 value={filteredMotorcycles[0].name}
               />
               <ErrorMessage name="item_id" component="div" className="text-red-600" />
@@ -128,18 +132,18 @@ const ReservationForm = () => {
                 options={items}
                 value={selectedItem}
                 onChange={handleItemChange}
-                className="w-full border border-gray-300 focus:outline-none focus:border-blue-500"
+                className="w-full  border-gray-300 focus:outline-none focus:border-blue-500"
               />
               <ErrorMessage name="item_id" component="div" className="text-red-600" />
             </div>
           )}
           <div className="mb-4">
-            <label htmlFor="location" className="block text-gray-600">Location:</label>
+            <label htmlFor="city" className="block text-gray-600">Location:</label>
             <Select
               id="city"
               name="city"
               options={cities}
-              className="w-full border border-gray-300 focus:outline-none focus:border-blue-500"
+              className="w-full border-gray-300 focus:outline-none bg-inputBg focus:bg-inputBg focus:border-customBg"
               value={selectedCity}
               onChange={handleCityChange}
             />
@@ -147,7 +151,7 @@ const ReservationForm = () => {
           </div>
           <button
             type="submit"
-            className="bg-green-500 text-white px-4 py-2 rounded-md hover:text-green-400 hover:bg-green-600 focus:outline-none"
+            className="bg-customBg px-4 py-2 rounded-md text-white hover:bg-customDark focus:outline-none"
           >
             Submit
           </button>
