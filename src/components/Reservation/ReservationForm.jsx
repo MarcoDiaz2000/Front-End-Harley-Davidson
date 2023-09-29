@@ -7,7 +7,7 @@ import Select from 'react-select';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { createReservation } from '../../redux/reservations/reservations';
+import { createReservation } from '../../redux/reservations/reservation';
 
 const ReservationForm = () => {
   const users = useSelector((state) => state.users.users);
@@ -74,7 +74,7 @@ const ReservationForm = () => {
   // });
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="flex flex-col mx-auto p-4">
       <h2 className="text-2xl font-semibold mb-4">
         Reservation
         {filteredMotorcycles.name}
