@@ -21,15 +21,17 @@ export default function Sidebar() {
   const menuItems = [
     { to: '/motors', label: 'MOTORS', icon: <TwoWheelerIcon /> },
     { to: '/myReservations', label: 'MY RESERVATIONS', icon: <EventAvailableIcon /> },
-    { to: `/reserve/${id}`, label: 'RESERVE', icon: <EventIcon /> },
+    { to: '/reserve', label: 'RESERVE', icon: <EventIcon /> },
     { to: `/add/${id}`, label: 'ADD MOTOR', icon: <AddBoxIcon /> },
     { to: `/delete/${id}`, label: 'DELETE', icon: <DeleteForeverIcon /> },
 
   ];
   return (
-    <div className="flex flex-col gap-12 sticky top-0 h-screen border-r border-customBorder font-roboto bg-white">
-      <div className="flex justify-center mt-4 mb-12 hidden md:flex">
-        <img src={logo} alt="Harley Davidson Logo" className="h-22 w-auto" />
+    <div className="flex flex-col gap-12 sticky top-0 h-screen border-r border-customBorder font-roboto bg-bodyBg">
+      <div className=" w-full justify-center items-center mt-4 mb-8 hidden md:flex">
+        <div className="w-40">
+          <img src={logo} alt="Harley Davidson Logo" className="h-auto w-full" />
+        </div>
       </div>
       <nav className="flex flex-col">
         <button
@@ -44,9 +46,9 @@ export default function Sidebar() {
             <NavLink
               key={item.label}
               to={item.to}
-              className="hover:text-white hover:bg-customYellow pt-2 pb-2 pl-6 ml-4 font-medium"
+              className="hover:text-white text-white hover:bg-customYellow pt-2 pb-2 pl-6 ml-4 font-medium"
             >
-              <span className="mr-2 text-customIcon ">{item.icon}</span>
+              <span className="mr-2 text-white ">{item.icon}</span>
               {item.label}
             </NavLink>
           ))}
@@ -65,7 +67,7 @@ export default function Sidebar() {
             ))}
         </div>
       </nav>
-      <div className="flex justify-center mt-auto pb-4 hidden md:flex">
+      <div className="flex justify-center text-white mt-auto pb-4 hidden md:flex">
         <TwitterIcon />
         <FacebookIcon />
         <InstagramIcon />

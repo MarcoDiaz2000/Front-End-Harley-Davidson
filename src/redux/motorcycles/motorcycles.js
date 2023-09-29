@@ -76,7 +76,7 @@ export const recoverMotorcycle = (id) => (dispatch) => {
 
 const initialState = {
   motorcycles: [],
-  selectedMotorcycle: null,
+  selectedMotorcycle: [],
 };
 
 const motorcyclesReducer = (state = initialState, action) => {

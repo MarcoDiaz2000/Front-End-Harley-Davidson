@@ -23,7 +23,7 @@ body {
 }
 
 .active {
-  background-color: hsl(74, 85%, 40%);
+  background-color: rgb(252, 99, 0);
   color: white;
 }
 
@@ -33,7 +33,7 @@ body {
 
 a.small.active {
   background-color: white;
-  color: hsl(74, 85%, 40%);
+  color: rgb(252, 99, 0);
 }
 
 code {
@@ -98,7 +98,7 @@ a {
 
 .slick-prev::before,
 .slick-next::before {
-  color: #94bd0f !important;
+  color: rgb(252, 99, 0) !important;
   font-size: 50px !important;
 }
 
@@ -138,6 +138,7 @@ a {
   align-items: center;
   justify-content: center;
   gap: 10px;
+  background-color: rgb(44, 44, 44);
 
   /* border: none !important; */
 
@@ -147,6 +148,7 @@ a {
 .slick-track {
   display: flex !important;
   gap: 10px;
+  background-color: #191719 !important;
 }
 
 .white-shadow {
@@ -163,4 +165,19 @@ a {
   box-shadow:
     1px 1px 1px 1px rgba(137, 136, 136, 0.5),
     1px 1px 1px 1px rgba(134, 134, 134, 0.7) !important;
+}
+
+.css-13cymwt-control {
+  background-color: rgb(44, 44, 44) !important;
+  border: none !important;
+  color: white !important;
+}
+
+.css-13cymwt-control:focus {
+  background-color: rgb(44, 44, 44) !important;
+  color: white !important;
+}
+
+.css-1dimb5e-singleValue {
+  color: white !important;
 }

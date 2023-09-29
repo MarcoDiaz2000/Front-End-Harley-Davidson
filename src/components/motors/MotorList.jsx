@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
-import img from '../../images/motor2.png';
+import { useDispatch, useSelector } from 'react-redux';
 import MotorItem from './MotorItem';
+import { fetchMotorcycles } from '../../redux/motorcycles/motorcycles';
 
 export default function MotorList() {
+  const dispatch = useDispatch();
+  const motorcycles = useSelector((state) => state.motorcycles.motorcycles);
+
+  useEffect(() => {
+    dispatch(fetchMotorcycles());
+  }, [dispatch]);
+
   const settings = {
     dots: true,
     infinite: false,
@@ -45,42 +53,10 @@ export default function MotorList() {
     dots, infinite, speed, slidesToShow, slidesToScroll, initialSlide, responsive,
   } = settings;
 
-  const items = [
-    {
-      id: 1,
-      name: 'Item 1',
-      description: 'Description of Item 1',
-      photo: img,
-    },
-    {
-      id: 2,
-      name: 'Item 2',
-      description: 'Description of Item 2',
-      photo: img,
-    },
-    {
-      id: 3,
-      name: 'Item 3',
-      description: 'Description of Item 3',
-      photo: img,
-    },
-    {
-      id: 4,
-      name: 'Item 4',
-      description: 'Description of Item 3',
-      photo: img,
-    },
-    {
-      id: 5,
-      name: 'Item 5',
-      description: 'Description of Item 3',
-      photo: img,
-    },
-  ];
   return (
-    <div className=" flex flex-col">
+    <div className=" flex flex-col bg-bodyBg">
       <div className="flex flex-col justify-center align-center items-center pb-8 font-roboto">
-        <h1 className="font-bold text-2xl">LATEST MODEL</h1>
+        <h1 className="font-bold text-white text-2xl">LATEST MODEL</h1>
         <h1 className="text-sm text-gray-500">please select a model</h1>
       </div>
       <Slider
@@ -91,9 +67,10 @@ export default function MotorList() {
         slidesToScroll={slidesToScroll}
         initialSlide={initialSlide}
         responsive={responsive}
+        className="bodyBg"
       >
-        {items.map((item) => (
-          <MotorItem key={item.id} item={item} />
+        {motorcycles.filter((motor) => !motor.removed).map((motor) => (
+          <MotorItem key={motor.id} motor={motor} />
         ))}
       </Slider>
     </div>
