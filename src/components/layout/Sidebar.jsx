@@ -9,6 +9,7 @@ import EventAvailableIcon from '@mui/icons-material/EventAvailable';
 import AddBoxIcon from '@mui/icons-material/AddBox';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import MenuIcon from '@mui/icons-material/Menu';
+import logo from './logo.png';
 
 export default function Sidebar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,9 +27,9 @@ export default function Sidebar() {
 
   ];
   return (
-    <div className="flex flex-col gap-12 sticky top-0 h-screen border-r border-customBorder font-roboto">
+    <div className="flex flex-col gap-12 sticky top-0 h-screen border-r border-customBorder font-roboto bg-white">
       <div className="flex justify-center mt-4 mb-12 hidden md:flex">
-        <span className="text-3xl font-bold">VESPA</span>
+        <img src={logo} alt="Harley Davidson Logo" className="h-22 w-auto" />
       </div>
       <nav className="flex flex-col">
         <button
