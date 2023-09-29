@@ -1,31 +1,24 @@
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { login } from '../../redux/auth';
+import { createUser } from '../../redux/users/users';
 
 const SignInPage = () => {
-  const [username, setUsername] = useState('');
-  const [error, setError] = useState('');
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [user, setUser] = useState('');
 
-  const handleChange = (e) => {
-    setUsername(e.target.value);
+  const handleChange = (event) => {
+    setUser(event.target.value);
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-
-    try {
-      const user = {
-        name: username,
-      };
-
-      await dispatch(login(user));
-      navigate('/home');
-    } catch (error) {
-      setError('Login failed. Please try again.'); // Set an error message to display to the user
-    }
+    dispatch(createUser(user));
+    navigate('/motors');
+    toast.success('You are successfully logged in');
+    setUser('');
   };
 
   return (
@@ -36,14 +29,14 @@ const SignInPage = () => {
           <input
             className="form-control"
             type="text"
-            name="username"
-            placeholder="User name"
+            name="name"
+            placeholder="Username"
             onChange={handleChange}
-            value={username}
+            value={user}
           />
         </div>
-        {error && <div className="text-danger">{error}</div>}
-        {' '}
+        {/* {error && <div className="text-danger">{error}</div>} */}
+        {/* {' '} */}
         {/* Display the error message */}
         <button className="btn btn-success" type="submit">
           LogIn

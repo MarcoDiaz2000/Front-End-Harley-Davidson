@@ -1,38 +1,67 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
-import img from '../../images/motor2.png';
+// import img from '../../images/motor2.png';
+import { fetchMotorcycleById } from '../../redux/motorcycles/motorcycles';
 
 export default function Details() {
   const { id } = useParams();
+  const dispatch = useDispatch();
+  const selectedMotorcycle = useSelector((state) => state.motorcycles.selectedMotorcycle);
+
+  useEffect(() => {
+    dispatch(fetchMotorcycleById(id));
+  }, [id, dispatch]);
+
   return (
     <div className="relative">
       <div className="w-full h-full flex justify-center items-center flex-col md:flex-row gap-2 px-4 py-4 font-roboto">
         <div className="flex flex-grow justify-center item-center mt-16 h-full rounded-2xl bg-gray-100">
           <div className="flex items-center justify-center">
-            <img className="w-full h-96" src={img} alt="img" />
+            <img className="w-full h-96" src={selectedMotorcycle.image} alt="img" />
           </div>
         </div>
         <div className="flex flex-col gap-2 w-80 px-4 py-4">
           <div className="flex flex-col mb-10 items-end">
-            <h1 className="text-2xl font-bold">Vespa Model</h1>
-            <p className="text-sm font-medium">- $120 deposit upon any Vespa purchase</p>
+            <h1 className="text-2xl font-bold">
+              {selectedMotorcycle.name}
+            </h1>
+            <p className="text-sm font-medium">
+              - $
+              {selectedMotorcycle.deposit}
+              {' '}
+              deposit upon any Vespa purchase
+            </p>
           </div>
           <ul>
             <li className="py-2 px-2 flex justify-between text-sm bg-gray-300">
               <span>Finance fee</span>
-              <span>$160</span>
+              <span>
+                $
+                {selectedMotorcycle.finance_fee}
+              </span>
             </li>
             <li className="py-2 px-2 flex justify-between text-sm">
               <span>Option to purchase fee</span>
-              <span>$40</span>
+              <span>
+                $
+                {selectedMotorcycle.option_to_purchase_fee}
+              </span>
             </li>
             <li className="py-2 px-2 flex justify-between text-sm bg-gray-300">
               <span>Total amount of payable</span>
-              <span>$888</span>
+              <span>
+                $
+                {selectedMotorcycle.option_to_purchase_fee}
+              </span>
             </li>
             <li className="py-2 px-2 flex justify-between text-sm">
               <span>Duration</span>
-              <span>43 month</span>
+              <span>
+                {selectedMotorcycle.duration}
+                {' '}
+                month
+              </span>
             </li>
           </ul>
           <div className="px-2 flex text-sm font-medium">
