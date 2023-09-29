@@ -8,7 +8,7 @@ export default function MotorItem({ motor }) {
       <div className="w-full flex justify-center items-center ">
         <img className="w-80 h-auto" src={motor.image} alt="motor" />
       </div>
-      <h1 className="font-bold bg-blur">{motor.name}</h1>
+      <h1 className="font-bold text-white bg-blur">{motor.name}</h1>
       <NavLink
         to={`/motors/${motor.id}`}
         type="button"
