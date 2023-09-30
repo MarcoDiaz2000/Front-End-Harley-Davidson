@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchReservations } from '../../redux/reservations/reservation';
-import { fetchMotorcycles } from '../../redux/motorcycles/motorcycles';
+import { fetchMotorcycles } from '../../redux/bikes/motorcycles';
 import Reservation from './reservation';
 import Pagination from './pagination'; // Import the Pagination component
 
