@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchReservations } from '../redux/reservations/thunk';
 import { fetchBikes } from '../redux/bikes/thunk';
-import { reservationsSelector, bikesSelector } from '../redux/store';
+import { reservationsSelector, bikesSelector, usersSelector } from '../redux/store';
 import LoadingScreen from '../components/conditions/LoadingScreen';
 import NoRecords from '../components/conditions/NoRecords';
 import List from '../components/myReservations/list';
@@ -12,9 +12,10 @@ export default function MyReservations() {
   const dispatch = useDispatch();
   const reservations = useSelector(reservationsSelector);
   const bikes = useSelector(bikesSelector);
+  const { user } = useSelector(usersSelector);
 
   useEffect(() => {
-    dispatch(fetchReservations({ userID: 1 }));
+    dispatch(fetchReservations({ userID: user.id }));
     dispatch(fetchBikes());
   }, [dispatch]);
 
@@ -29,7 +30,7 @@ export default function MyReservations() {
       return (
         <div>
           <h1 className="text-white text-2xl text-center">Error</h1>
-          <p className="text-white text-center">{reservations.error}</p>
+          <p className="text-white text-center">{reservations.errorMsg}</p>
         </div>
       );
     }
@@ -37,7 +38,7 @@ export default function MyReservations() {
       return (
         <div>
           <h1 className="text-white text-2xl text-center">Error</h1>
-          <p className="text-white text-center">{bikes.error}</p>
+          <p className="text-white text-center">{bikes.errorMsg}</p>
         </div>
       );
     }
