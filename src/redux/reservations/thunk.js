@@ -14,10 +14,10 @@ export const fetchReservations = createAsyncThunk('reservations/fetchReservation
   }
 });
 
-// Create bike
-export const createReservation = createAsyncThunk('reservations/createReservation', async ({ data }, thunkAPI) => {
+// Create a reservation
+export const createReservation = createAsyncThunk('reservations/createReservation', async ({ reservation }, thunkAPI) => {
   try {
-    const response = await axios.post(url, data);
+    const response = await axios.post(url, reservation);
     return response.data;
   } catch (error) {
     return thunkAPI.rejectWithValue(error.response.data);
