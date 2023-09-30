@@ -17,6 +17,7 @@ export const fetchBikes = createAsyncThunk('bikes/fetchBikes', async (thunkAPI) 
 // Create bike
 export const createBike = createAsyncThunk('bikes/createBike', async ({ data }, thunkAPI) => {
   try {
+    console.log('data', data);
     const response = await axios.post(url, data);
     return response.data;
   } catch (error) {
@@ -24,10 +25,20 @@ export const createBike = createAsyncThunk('bikes/createBike', async ({ data }, 
   }
 });
 
-// Update :removed
-export const updateBike = createAsyncThunk('bikes/updateBike', async ({ id, data }, thunkAPI) => {
+// Mark bike as removed
+export const markBikeAsRemoved = createAsyncThunk('bikes/markBikeAsRemoved', async ({ id }, thunkAPI) => {
   try {
-    const response = await axios.patch(`${url}/items/${id}`, data);
+    const response = await axios.patch(`${url}/${id}`, { item: { removed: true } });
+    return response.data;
+  } catch (error) {
+    return thunkAPI.rejectWithValue(error.response.data);
+  }
+});
+
+// Mark bike as restored
+export const markBikeAsRestored = createAsyncThunk('bikes/markBikeAsRestored', async ({ id }, thunkAPI) => {
+  try {
+    const response = await axios.patch(`${url}/${id}`, { item: { removed: false } });
     return response.data;
   } catch (error) {
     return thunkAPI.rejectWithValue(error.response.data);
