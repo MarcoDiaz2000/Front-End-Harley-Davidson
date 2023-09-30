@@ -1,11 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 import {
-  fetchBikes, createBike, markBikeAsRemoved, markBikeAsRestored,
+  fetchBikes, fetchBike, createBike, markBikeAsRemoved, markBikeAsRestored,
 } from './thunk';
 
 const initialState = {
   bikes: [],
+  bike: [],
   isLoading: true,
   error: false,
   errMsg: '',
@@ -26,6 +27,20 @@ const bikesSlice = createSlice({
         state.bikes = action.payload;
       })
       .addCase(fetchBikes.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = true;
+        state.errMsg = action.payload;
+      })
+
+      // Fetch bike
+      .addCase(fetchBike.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(fetchBike.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.bike = action.payload;
+      })
+      .addCase(fetchBike.rejected, (state, action) => {
         state.isLoading = false;
         state.error = true;
         state.errMsg = action.payload;
