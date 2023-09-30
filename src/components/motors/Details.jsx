@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
 // import img from '../../images/motor2.png';
-import { fetchMotorcycleById } from '../../redux/motorcycles/motorcycles';
+import { fetchMotorcycleById } from '../../redux/bikes/motorcycles';
 
 export default function Details() {
   const { id } = useParams();
