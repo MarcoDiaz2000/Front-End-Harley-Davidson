@@ -14,6 +14,16 @@ export const fetchBikes = createAsyncThunk('bikes/fetchBikes', async (thunkAPI) 
   }
 });
 
+// Get bike
+export const fetchBike = createAsyncThunk('bikes/fetchBike', async ({ id }, thunkAPI) => {
+  try {
+    const response = await axios.get(`${url}/${id}`);
+    return response.data;
+  } catch (error) {
+    return thunkAPI.rejectWithValue(error.response.data);
+  }
+});
+
 // Create bike
 export const createBike = createAsyncThunk('bikes/createBike', async ({ data }, thunkAPI) => {
   try {
