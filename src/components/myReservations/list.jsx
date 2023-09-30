@@ -1,21 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchReservations } from '../../redux/reservations/reservation';
-import { fetchMotorcycles } from '../../redux/motorcycles/motorcycles';
 import Reservation from './reservation';
 import Pagination from './pagination'; // Import the Pagination component
 
-export default function List() {
-  const dispatch = useDispatch();
-  const allReservations = useSelector((state) => state.reservations.reservations);
-  const allItems = useSelector((state) => state.motorcycles.motorcycles);
-
-  useEffect(() => {
-    dispatch(fetchReservations(1));
-    if (allItems.length === 0) dispatch(fetchMotorcycles());
-  }, [dispatch, allItems]);
-
+export default function List({ allReservations, bikes }) {
   // Define the number of reservations per page
   const reservationsPerPage = 5;
 
@@ -40,7 +29,7 @@ export default function List() {
   };
 
   return (
-    <div>
+    <div className="flex flex-col justify-between">
       <table className="border-collapse border border-gray-300 mx-auto mt-12 bg-white drop-shadow-md w-11/12">
         <thead>
           <tr className="text-center">
@@ -55,7 +44,7 @@ export default function List() {
         </thead>
         <tbody>
           {reservations.map((reservation) => (
-            <Reservation key={reservation.id} reservation={reservation} allItems={allItems} />
+            <Reservation key={reservation.id} reservation={reservation} bikes={bikes} />
           ))}
         </tbody>
       </table>
@@ -69,3 +58,26 @@ export default function List() {
     </div>
   );
 }
+
+List.propTypes = {
+  allReservations: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    username_id: PropTypes.string.isRequired,
+    item_id: PropTypes.string.isRequired,
+    city: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
+    removed: PropTypes.bool.isRequired,
+    length: PropTypes.number.isRequired,
+    slice: PropTypes.func.isRequired,
+  }).isRequired,
+  bikes: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    image_url: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
+    city: PropTypes.string.isRequired,
+  }).isRequired,
+};

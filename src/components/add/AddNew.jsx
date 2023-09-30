@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
-import { createMotorcycle } from '../../redux/motorcycles/motorcycles';
+import { createBike } from '../../redux/bikes/thunk';
 import MotorcycleForm from './MotorcycleForm';
 
 export default function AddNew() {
   const dispatch = useDispatch();
   const [newMotor, setNewMotor] = useState({
     name: '',
-    image: '',
     description: '',
     deposit: 0,
     finance_fee: 0,
@@ -25,17 +24,28 @@ export default function AddNew() {
     });
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
     if (!newMotor.name || newMotor.name.trim() === '') {
       toast.error('The name field is required.');
       return;
     }
 
-    dispatch(createMotorcycle(newMotor));
+    const data = new FormData();
+
+    data.append('item[name]', event.target.name.value);
+    data.append('item[image]', event.target.image.files[0]);
+    data.append('item[description]', event.target.description.value);
+    data.append('item[deposit]', event.target.deposit.value);
+    data.append('item[finance_fee]', event.target.finance_fee.value);
+    data.append('item[option_to_purchase_fee]', event.target.option_to_purchase_fee.value);
+    data.append('item[total_amount_payable]', event.target.total_amount_payable.value);
+    data.append('item[duration]', event.target.duration.value);
+    dispatch(createBike({ data }));
+
     toast.success('New motorcycle successfully added');
     setNewMotor({
       name: '',
-      image: '',
       description: '',
       deposit: 0,
       finance_fee: 0,

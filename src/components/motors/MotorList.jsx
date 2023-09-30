@@ -4,14 +4,14 @@ import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
 import { useDispatch, useSelector } from 'react-redux';
 import MotorItem from './MotorItem';
-import { fetchMotorcycles } from '../../redux/motorcycles/motorcycles';
+import { fetchBikes } from '../../redux/bikes/thunk';
 
 export default function MotorList() {
   const dispatch = useDispatch();
-  const motorcycles = useSelector((state) => state.motorcycles.motorcycles);
+  const motorcycles = useSelector((state) => state.bikes.bikes);
 
   useEffect(() => {
-    dispatch(fetchMotorcycles());
+    dispatch(fetchBikes());
   }, [dispatch]);
 
   const settings = {

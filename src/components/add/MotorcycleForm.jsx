@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 function MotorcycleForm({ newMotor, handleChange, handleSubmit }) {
   return (
-    <form>
+    <form onSubmit={(e) => handleSubmit(e)}>
       <div className="mb-3">
         <label htmlFor="name" className="text-white block mb-2 font-roboto font-bold">
           Name *:
@@ -20,14 +20,12 @@ function MotorcycleForm({ newMotor, handleChange, handleSubmit }) {
       </div>
       <div className="mb-3">
         <label htmlFor="image" className="text-white block mb-2 font-roboto font-bold">
-          Image URL:
+          Image:
           <input
             id="image"
             className="w-full p-2 rounded text-black font-roboto font-bold"
-            type="text"
+            type="file"
             name="image"
-            onChange={handleChange}
-            value={newMotor.image}
           />
         </label>
       </div>
@@ -111,8 +109,7 @@ function MotorcycleForm({ newMotor, handleChange, handleSubmit }) {
       </div>
       <div className="flex justify-center">
         <button
-          type="button"
-          onClick={handleSubmit}
+          type="submit"
           className="bg-harleyOrange text-white py-3 px-12 rounded hover:bg-orange-700 shadow-md font-roboto font-bold"
         >
           Add New Motorcycle

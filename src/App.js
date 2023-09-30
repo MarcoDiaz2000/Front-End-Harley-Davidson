@@ -7,7 +7,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Routes, Route } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import HomePage from './pages/home/Homepage';
-import SignUpPage from './pages/signup/SignUp';
 import SignInPage from './pages/signin/SignIn';
 import Layout from './components/layout/Layout';
 import Main from './routes/Home';
@@ -18,16 +17,15 @@ import Reserve from './routes/Reserve';
 import ItemDetail from './routes/ItemDetail';
 
 function App() {
-  const users = useSelector((state) => state.users.users);
+  const user = useSelector((state) => state.users.user);
 
-  if (!users || users.length === 0) {
+  if (!user || user.length === 0) {
     return (
       <>
         <ToastContainer />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/signin" element={<SignInPage />} />
-          <Route path="/signup" element={<SignUpPage />} />
         </Routes>
       </>
     );
