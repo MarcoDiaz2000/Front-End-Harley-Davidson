@@ -17,7 +17,7 @@ export default function MyReservations() {
   useEffect(() => {
     dispatch(fetchReservations({ userID: user.id }));
     dispatch(fetchBikes());
-  }, [dispatch]);
+  }, [dispatch, user.id]);
 
   if (reservations.isLoading || bikes.isLoading) {
     return (
