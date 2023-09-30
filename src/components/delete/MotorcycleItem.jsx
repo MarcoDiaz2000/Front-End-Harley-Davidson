@@ -2,18 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
-import { markMotorcycleAsRemoved, recoverMotorcycle } from '../../redux/bikes/motorcycles';
+import { markBikeAsRemoved, markBikeAsRestored } from '../../redux/bikes/thunk';
 
 const MotorcycleItem = ({ motorcycle }) => {
   const dispatch = useDispatch();
 
   const handleDelete = (id) => {
-    dispatch(markMotorcycleAsRemoved(id));
+    dispatch(markBikeAsRemoved({ id }));
     toast.success('Motorcycle marked for deletion');
   };
 
   const handleRecover = (id) => {
-    dispatch(recoverMotorcycle(id));
+    dispatch(markBikeAsRestored({ id }));
     toast.success('Motorcycle recovered');
   };
 
