@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { createUser } from '../../redux/users/users';
+import createUser from '../../redux/user/thunk';
 
 const SignInPage = () => {
   const dispatch = useDispatch();
@@ -19,7 +19,7 @@ const SignInPage = () => {
       toast.error('The name field is required.');
       return;
     }
-    dispatch(createUser(user));
+    dispatch(createUser({ username: user }));
     navigate('/motors');
     toast.success('You are successfully logged in');
     setUser('');
