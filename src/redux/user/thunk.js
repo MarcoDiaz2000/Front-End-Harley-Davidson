@@ -7,7 +7,6 @@ const url = `${baseUrl}/users`;
 // Post user
 const createUser = createAsyncThunk('users/createUser', async ({ username }, thunkAPI) => {
   try {
-    console.log({ username });
     const user = { username };
     const response = await axios.post(url, user);
     return response.data;
