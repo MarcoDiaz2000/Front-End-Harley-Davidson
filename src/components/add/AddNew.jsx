@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
-import { createMotorcycle } from '../../redux/motorcycles/motorcycles';
+import { createMotorcycle } from '../../redux/bikes/motorcycles';
 import MotorcycleForm from './MotorcycleForm';
 
 export default function AddNew() {
