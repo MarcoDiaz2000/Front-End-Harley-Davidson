@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
-import { markMotorcycleAsRemoved, recoverMotorcycle } from '../../redux/motorcycles/motorcycles';
+import { markMotorcycleAsRemoved, recoverMotorcycle } from '../../redux/bikes/motorcycles';
 
 const MotorcycleItem = ({ motorcycle }) => {
   const dispatch = useDispatch();
