@@ -7,14 +7,16 @@ import Select from 'react-select';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { createReservation } from '../../redux/reservations/reservation';
+import { createReservation } from '../../redux/reservations/thunk';
+import { bikesSelector, usersSelector } from '../../redux/store';
 
 const ReservationForm = () => {
-  const users = useSelector((state) => state.users.users);
-  const motorcycles = useSelector((state) => state.motorcycles.motorcycles);
+  const dispatch = useDispatch();
+  const { user } = useSelector(usersSelector);
+  const { bikes } = useSelector(bikesSelector);
   const { id } = useParams();
-  const filteredMotorcycles = motorcycles.filter(
-    (motorcycle) => motorcycle.id === parseInt(id, 10),
+  const filteredBikes = bikes.filter(
+    (bike) => bike.id === parseInt(id, 10),
   );
   const [selectedCity, setSelectedCity] = useState(null);
   const [selectedItem, setSelectedItem] = useState(null);
@@ -26,17 +28,16 @@ const ReservationForm = () => {
   const handleItemChange = (selectedOption) => {
     setSelectedItem(selectedOption);
   };
-  const dispatch = useDispatch();
 
   const initialValues = {
-    user_id: users[0].id,
-    item_id: filteredMotorcycles.length > 0 ? filteredMotorcycles[0].id : null,
+    user_id: user.id,
+    item_id: filteredBikes.length > 0 ? filteredBikes[0].id : null,
     city: null,
     date: '',
   };
 
   const handleSubmit = (values, { setSubmitting }) => {
-    if (!selectedCity || (filteredMotorcycles.length === 0 && !selectedItem)) {
+    if (!selectedCity || (filteredBikes.length === 0 && !selectedItem)) {
       // Handle the case when any value is empty
       toast.error('Please fill in all the required fields');
       setSubmitting(false);
@@ -48,7 +49,8 @@ const ReservationForm = () => {
       city: selectedCity.value,
       item_id: selectedItem ? selectedItem.value : values.item_id,
     };
-    dispatch(createReservation(updatedValues));
+    console.log(user);
+    dispatch(createReservation({ reservation: updatedValues }));
     toast.success('You have successfully reserved a Motorbike');
     console.log(updatedValues);
     setSubmitting(false);
@@ -65,11 +67,11 @@ const ReservationForm = () => {
     { value: 'Sydney', label: 'Sydney' },
   ];
 
-  const items = motorcycles
-    .filter((motor) => !motor.removed)
-    .map((motor) => ({
-      value: motor.id,
-      label: motor.name,
+  const items = bikes
+    .filter((bike) => !bike.removed)
+    .map((bike) => ({
+      value: bike.id,
+      label: bike.name,
     }));
 
   const validationSchema = Yup.object().shape({
@@ -81,7 +83,7 @@ const ReservationForm = () => {
     <div className="flex flex-col mx-auto  p-4">
       <h2 className="text-2xl text-white font-semibold mb-4">
         Reservation
-        {filteredMotorcycles.name}
+        {filteredBikes.name}
       </h2>
       <Formik
         initialValues={initialValues}
@@ -111,7 +113,7 @@ const ReservationForm = () => {
             />
             <ErrorMessage name="date" component="div" className="text-red-600" />
           </div>
-          {filteredMotorcycles.length > 0 ? (
+          {filteredBikes.length > 0 ? (
             <div className="mb-4">
               <label htmlFor="motorcycle" className="block text-gray-600">Motorcycle:</label>
               <Field
@@ -119,13 +121,13 @@ const ReservationForm = () => {
                 id="item_id"
                 name="item_id"
                 className="w-full px-4 py-2 rounded-md text-white focus:outline-none focus:border-blue-500  bg-inputBg focus:bg-inputBg"
-                value={filteredMotorcycles[0].name}
+                value={filteredBikes[0].name}
               />
               <ErrorMessage name="item_id" component="div" className="text-red-600" />
             </div>
           ) : (
             <div className="mb-4">
-              <label htmlFor="motorcycle" className="block text-gray-600">Motorcycle:</label>
+              <label htmlFor="bike" className="block text-gray-600">Bike:</label>
               <Select
                 id="item_id"
                 name="item_id"
