@@ -3,15 +3,15 @@ import { useSelector, useDispatch } from 'react-redux';
 import Carousel from 'react-multi-carousel';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMotorcycle, faCircleInfo } from '@fortawesome/free-solid-svg-icons';
-import { fetchMotorcycles } from '../redux/motorcycles/motorcycles';
+import { fetchBikes } from '../redux/bikes/thunk';
 import Motor from './Motor';
 
 const Home = () => {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchMotorcycles());
+    dispatch(fetchBikes());
   }, [dispatch]);
-  const motors = useSelector((state) => state.motorcycles);
+  const motors = useSelector((state) => state.bikes.bikes);
 
   return (
     <div className="text-center w-75">
