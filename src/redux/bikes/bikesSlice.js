@@ -1,6 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { fetchBikes, createBike, updateBike } from './thunk';
+import {
+  fetchBikes, createBike, markBikeAsRemoved, markBikeAsRestored,
+} from './thunk';
 
 const initialState = {
   bikes: [],
@@ -43,17 +45,38 @@ const bikesSlice = createSlice({
         state.errMsg = action.payload;
       })
 
-      // Update :removed
-      .addCase(updateBike.pending, (state) => {
+      // Mark bike as removed
+      .addCase(markBikeAsRemoved.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(updateBike.fulfilled, (state, action) => {
+      .addCase(markBikeAsRemoved.fulfilled, (state, action) => {
         state.isLoading = false;
         state.bikes = state.bikes.map((bike) => (
-          bike.id === action.payload.id
-            ? action.payload
+          bike.id === action.payload.id ? { ...bike, removed: true }
             : bike
         ));
+      })
+      .addCase(markBikeAsRemoved.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = true;
+        state.errMsg = action.payload;
+      })
+
+      // Mark bike as restored
+      .addCase(markBikeAsRestored.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(markBikeAsRestored.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.bikes = state.bikes.map((bike) => (
+          bike.id === action.payload.id ? { ...bike, removed: false }
+            : bike
+        ));
+      })
+      .addCase(markBikeAsRestored.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = true;
+        state.errMsg = action.payload;
       });
   },
 });
