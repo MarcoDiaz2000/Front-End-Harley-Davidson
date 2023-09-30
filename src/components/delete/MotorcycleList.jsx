@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchMotorcycles } from '../../redux/motorcycles/motorcycles';
+import { fetchBikes } from '../../redux/bikes/thunk';
 import MotorcycleItem from './MotorcycleItem';
 
 const MotorcycleList = () => {
   const dispatch = useDispatch();
-  const motorcycles = useSelector((state) => state.motorcycles.motorcycles);
+  const motorcycles = useSelector((state) => state.bikes.bikes);
 
   useEffect(() => {
-    dispatch(fetchMotorcycles());
+    dispatch(fetchBikes());
   }, [dispatch]);
 
   return (
