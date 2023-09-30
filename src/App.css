@@ -17,12 +17,12 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #fff;
+  background-color: #191719;
 }
 
 .spinner {
   border: 4px solid #f1f1f1;
-  border-top: 4px solid #94bd0f;
+  border-top: 4px solid #CA5202;
   border-radius: 50%;
   width: 40px;
   height: 40px;
