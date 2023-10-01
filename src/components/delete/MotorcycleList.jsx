@@ -21,10 +21,10 @@ const MotorcycleList = () => {
   if (error) {
     return (
       <div>
-        <h1>Error</h1>
-        <p>{errorMsg}</p>
+        <h1 className="text-white text-2xl text-center">Error</h1>
+        <p className="text-white text-center">{errorMsg}</p>
       </div>
-    );
+    )
   }
   
   return (
