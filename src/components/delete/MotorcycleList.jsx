@@ -26,7 +26,7 @@ const MotorcycleList = () => {
       </div>
     );
   }
-  
+
   return (
     <ul className="divide-customBorder">
       {bikes.length > 0 ? (
