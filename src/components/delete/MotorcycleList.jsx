@@ -29,12 +29,12 @@ const MotorcycleList = () => {
   
   return (
     <ul className="divide-customBorder">
-      {motorcycles.length > 0 ? (
-        motorcycles.map((motorcycle) => (
+      (
+        bikes.map((motorcycle) => (
           <MotorcycleItem key={motorcycle.id} motorcycle={motorcycle} />
         ))
       ) : (
-        <div className="text-center text-white font-bold">Without motorcycles in inventory</div>
+        <div>Without</div>
       )}
     </ul>
   );
