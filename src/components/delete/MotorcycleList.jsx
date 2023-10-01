@@ -2,10 +2,13 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchBikes } from '../../redux/bikes/thunk';
 import MotorcycleItem from './MotorcycleItem';
+import LoadingScreen from '../conditions/LoadingScreen';
 
 const MotorcycleList = () => {
   const dispatch = useDispatch();
-  const motorcycles = useSelector((state) => state.bikes.bikes);
+  const {
+    bikes, isLoading, error, errorMsg,
+  } = useSelector((state) => state.bikes);
 
   useEffect(() => {
     dispatch(fetchBikes());
