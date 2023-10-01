@@ -6,6 +6,7 @@ import MotorcycleForm from './MotorcycleForm';
 
 export default function AddNew() {
   const dispatch = useDispatch();
+  const { isLoading, error, errorMsg } = useSelector((state) => state.bikes);
   const [newMotor, setNewMotor] = useState({
     name: '',
     description: '',
