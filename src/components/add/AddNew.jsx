@@ -56,6 +56,10 @@ export default function AddNew() {
     });
   };
 
+  if (isLoading) {
+    return <LoadingScreen />
+  }
+
   return (
     <div className="flex justify-center bodyBg overflow-y-auto pt-12 pb-12 min-h-screen">
       <div className="bg-customBg p-5 rounded-lg w-full sm:w-1/2 mb-12 white-shadow flex-shrink-0">
