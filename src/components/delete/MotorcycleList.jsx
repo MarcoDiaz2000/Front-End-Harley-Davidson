@@ -34,7 +34,7 @@ const MotorcycleList = () => {
           <MotorcycleItem key={motorcycle.id} motorcycle={motorcycle} />
         ))
       ) : (
-        <div>Without</div>
+        <div>Without motorcycles in inventory</div>
       )}
     </ul>
   );
