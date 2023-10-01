@@ -63,6 +63,7 @@ export default function AddNew() {
   if (error) {
     return (
       <div>
+        <h1>Error</h1>
         <p>{errorMsg}</p>
       </div>
     );
