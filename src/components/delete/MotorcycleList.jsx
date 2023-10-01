@@ -17,6 +17,15 @@ const MotorcycleList = () => {
   if (isLoading) {
     return <LoadingScreen />;
   }
+
+  if (error) {
+    return (
+      <div>
+        <h1>Error</h1>
+        <p>{errorMsg}</p>
+      </div>
+    );
+  }
   
   return (
     <ul className="divide-customBorder">
