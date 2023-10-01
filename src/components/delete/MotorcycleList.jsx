@@ -14,6 +14,10 @@ const MotorcycleList = () => {
     dispatch(fetchBikes());
   }, [dispatch]);
 
+  if (isLoading) {
+    return <LoadingScreen />;
+  }
+
   return (
     <ul className="divide-customBorder">
       {motorcycles.length > 0 ? (
