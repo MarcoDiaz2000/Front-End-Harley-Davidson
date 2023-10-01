@@ -1,21 +1,35 @@
-/* eslint-disable max-len */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
 import { bikesSelector } from '../../redux/store';
-// import img from '../../images/motor2.png';
 import { fetchBike } from '../../redux/bikes/thunk';
+import LoadingScreen from '../conditions/LoadingScreen';
 
 export default function Details() {
   const { id } = useParams();
   const dispatch = useDispatch();
-  const { bike } = useSelector(bikesSelector);
+  const {
+    bike, error, errMsg, isLoading,
+  } = useSelector(bikesSelector);
 
   useEffect(() => {
     dispatch(fetchBike({ id }));
   }, [id, dispatch]);
 
-  console.log(bike.image_url);
+  if (isLoading) {
+    return (
+      <LoadingScreen />
+    );
+  }
+
+  if (error) {
+    return (
+      <div>
+        <h1 className="text-white text-2xl text-center">Error</h1>
+        <p className="text-white text-center">{ errMsg }</p>
+      </div>
+    );
+  }
   return (
     <div className="relative w-full h-full">
       <div className="w-full h-full flex justify-center items-center flex-col md:flex-row gap-2 px-4 py-4 font-roboto">

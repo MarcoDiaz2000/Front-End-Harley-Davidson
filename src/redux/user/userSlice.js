@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import createUser from './thunk';
 
 const initialState = {
-  user: null,
+  user: [],
   isLoading: true,
   error: false,
   errMsg: '',
