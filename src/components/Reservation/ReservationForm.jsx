@@ -7,15 +7,16 @@ import Select from 'react-select';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import PropTypes from 'prop-types';
 import { createReservation } from '../../redux/reservations/thunk';
-import { bikesSelector, usersSelector } from '../../redux/store';
+import { usersSelector } from '../../redux/store';
 
-const ReservationForm = () => {
+const ReservationForm = ({ bikes }) => {
+  const motorbikes = bikes;
   const dispatch = useDispatch();
   const { user } = useSelector(usersSelector);
-  const { bikes } = useSelector(bikesSelector);
   const { id } = useParams();
-  const filteredBikes = bikes.filter(
+  const filteredBikes = motorbikes.filter(
     (bike) => bike.id === parseInt(id, 10),
   );
   const [selectedCity, setSelectedCity] = useState(null);
@@ -49,10 +50,10 @@ const ReservationForm = () => {
       city: selectedCity.value,
       item_id: selectedItem ? selectedItem.value : values.item_id,
     };
-    console.log(user);
+    console.log(updatedValues);
     dispatch(createReservation({ reservation: updatedValues }));
     toast.success('You have successfully reserved a Motorbike');
-    console.log(updatedValues);
+    console.log(values);
     setSubmitting(false);
   };
 
@@ -67,7 +68,7 @@ const ReservationForm = () => {
     { value: 'Sydney', label: 'Sydney' },
   ];
 
-  const items = bikes
+  const items = motorbikes
     .filter((bike) => !bike.removed)
     .map((bike) => ({
       value: bike.id,
@@ -161,6 +162,18 @@ const ReservationForm = () => {
       </Formik>
     </div>
   );
+};
+
+ReservationForm.propTypes = {
+  bikes: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    image_url: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
+    city: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default ReservationForm;
