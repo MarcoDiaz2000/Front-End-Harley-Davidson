@@ -20,18 +20,19 @@ function MotorcycleForm({ newMotor, handleChange, handleSubmit }) {
       </div>
       <div className="mb-3">
         <label htmlFor="image" className="text-white block mb-2 font-roboto font-bold">
-          Image:
+          Image *:
           <input
             id="image"
             className="w-full p-2 rounded text-black font-roboto font-bold"
             type="file"
             name="image"
+            required
           />
         </label>
       </div>
       <div className="mb-3">
         <label htmlFor="description" className="text-white block mb-2 font-roboto font-bold">
-          Description:
+          Description *:
           <textarea
             id="description"
             className="w-full p-2 rounded text-black font-roboto font-bold"
@@ -39,6 +40,8 @@ function MotorcycleForm({ newMotor, handleChange, handleSubmit }) {
             name="description"
             onChange={handleChange}
             value={newMotor.description}
+            required
+            maxLength="250"
           />
         </label>
       </div>
