@@ -22,6 +22,7 @@ const SignInPage = () => {
     dispatch(createUser({ username: user }));
     navigate('/motors');
     toast.success('You are successfully logged in');
+    localStorage.setItem('user', user);
     setUser('');
   };
 

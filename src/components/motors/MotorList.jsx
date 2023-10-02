@@ -1,19 +1,12 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
-import { useDispatch, useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
 import MotorItem from './MotorItem';
-import { fetchBikes } from '../../redux/bikes/thunk';
 
-export default function MotorList() {
-  const dispatch = useDispatch();
-  const motorcycles = useSelector((state) => state.bikes.bikes);
-
-  useEffect(() => {
-    dispatch(fetchBikes());
-  }, [dispatch]);
-
+export default function MotorList({ motorcycles }) {
+  const bikes = motorcycles;
   const settings = {
     dots: true,
     infinite: false,
@@ -69,10 +62,22 @@ export default function MotorList() {
         responsive={responsive}
         className="bodyBg"
       >
-        {motorcycles.filter((motor) => !motor.removed).map((motor) => (
+        {bikes.filter((motor) => !motor.removed).map((motor) => (
           <MotorItem key={motor.id} motor={motor} />
         ))}
       </Slider>
     </div>
   );
 }
+
+MotorList.propTypes = {
+  motorcycles: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    image_url: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
+    city: PropTypes.string.isRequired,
+  }).isRequired,
+};
