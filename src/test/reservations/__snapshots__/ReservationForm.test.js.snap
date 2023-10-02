@@ -20,3 +20,21 @@ exports[`ReservationForm renders correctly 1`] = `
     className="block text-gray-600"
     htmlFor="motorcycle"
   >
+    Motorcycle:
+  </label>
+  <input
+    className="w-full px-4 py-2 rounded-md text-white focus:outline-none focus:border-blue-500  bg-inputBg focus:bg-inputBg"
+    id="item_id"
+    name="item_id"
+    type="text"
+    value="Mock Motorcycle"
+  />
+  <label
+    className="block text-gray-600"
+    htmlFor="city"
+  >
+    Location:
+  </label>
+  <select
+    className="w-full border-gray-300 focus:outline-none bg-inputBg focus:bg-inputBg focus:border-customBg"
+    id="city"
