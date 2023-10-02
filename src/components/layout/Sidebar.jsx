@@ -1,4 +1,5 @@
- import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
@@ -80,3 +81,7 @@ export default function Sidebar({ toggleSidebar }) {
 
   );
 }
+
+Sidebar.propTypes = {
+  toggleSidebar: PropTypes.func.isRequired,
+};
