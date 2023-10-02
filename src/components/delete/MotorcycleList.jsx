@@ -1,43 +1,23 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchBikes } from '../../redux/bikes/thunk';
+import React from 'react';
+import PropTypes from 'prop-types';
 import MotorcycleItem from './MotorcycleItem';
-import LoadingScreen from '../conditions/LoadingScreen';
 
-const MotorcycleList = () => {
-  const dispatch = useDispatch();
-  const {
-    bikes, isLoading, error, errorMsg,
-  } = useSelector((state) => state.bikes);
+const MotorcycleList = ({ bikes }) => (
+  <ul className="divide-customBorder">
+    {bikes.map((motorcycle) => (
+      <MotorcycleItem key={motorcycle.id} motorcycle={motorcycle} />
+    ))}
+  </ul>
+);
 
-  useEffect(() => {
-    dispatch(fetchBikes());
-  }, [dispatch]);
-
-  if (isLoading) {
-    return <LoadingScreen />;
-  }
-
-  if (error) {
-    return (
-      <div>
-        <h1 className="text-white text-2xl text-center">Error</h1>
-        <p className="text-white text-center">{errorMsg}</p>
-      </div>
-    );
-  }
-
-  return (
-    <ul className="divide-customBorder">
-      {bikes.length > 0 ? (
-        bikes.map((motorcycle) => (
-          <MotorcycleItem key={motorcycle.id} motorcycle={motorcycle} />
-        ))
-      ) : (
-        <div className="text-center text-white font-bold">Without motorcycles in inventory</div>
-      )}
-    </ul>
-  );
+MotorcycleList.propTypes = {
+  bikes: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+      removed: PropTypes.bool.isRequired,
+    }),
+  ).isRequired,
 };
 
 export default MotorcycleList;

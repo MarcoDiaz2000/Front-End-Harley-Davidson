@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
 import { createBike } from '../../redux/bikes/thunk';
 import MotorcycleForm from './MotorcycleForm';
-import LoadingScreen from '../conditions/LoadingScreen';
 
 export default function AddNew() {
   const dispatch = useDispatch();
-  const { isLoading, error, errorMsg } = useSelector((state) => state.bikes);
   const [newMotor, setNewMotor] = useState({
     name: '',
     description: '',
@@ -56,19 +54,6 @@ export default function AddNew() {
       duration: 0,
     });
   };
-
-  if (isLoading) {
-    return <LoadingScreen />;
-  }
-
-  if (error) {
-    return (
-      <div>
-        <h1 className="text-white text-2xl text-center">Error</h1>
-        <p className="text-white text-center">{errorMsg}</p>
-      </div>
-    );
-  }
 
   return (
     <div className="flex justify-center bodyBg overflow-y-auto pt-12 pb-12 min-h-screen">
