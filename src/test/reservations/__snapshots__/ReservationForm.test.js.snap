@@ -38,3 +38,29 @@ exports[`ReservationForm renders correctly 1`] = `
   <select
     className="w-full border-gray-300 focus:outline-none bg-inputBg focus:bg-inputBg focus:border-customBg"
     id="city"
+    name="city"
+  >
+    <option
+      value="New York"
+    >
+      New York
+    </option>
+    <option
+      value="Los Angeles"
+    >
+      Los Angeles
+    </option>
+    <option
+      value="Chicago"
+    >
+      Chicago
+    </option>
+  </select>
+  <button
+    className="bg-customBg px-4 py-2 rounded-md text-white hover:bg-customDark focus:outline-none"
+    type="submit"
+  >
+    Submit
+  </button>
+</div>
+`;
