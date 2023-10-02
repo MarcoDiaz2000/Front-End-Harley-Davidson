@@ -46,7 +46,7 @@ export default function MyReservations() {
 
   if (reservations.reservations.length < 1) {
     return (
-      <NoRecords />
+      <NoRecords message="No reservations" />
     );
   }
 
