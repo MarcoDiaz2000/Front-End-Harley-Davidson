@@ -1,3 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ReservationForm renders correctly 1`] = `
+<div
+  className="reservation-form"
+>
+  <label
+    className="block text-gray-600"
+    htmlFor="date"
+  >
