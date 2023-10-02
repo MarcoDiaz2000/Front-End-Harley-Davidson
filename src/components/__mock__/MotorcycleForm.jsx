@@ -1,21 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-function MotorcycleForm({ newMotor, handleChange, handleSubmit }) {
+export default function MotorcycleForm() {
   return (
-    <form onSubmit={(e) => handleSubmit(e)}>
+    <form>
       <div className="mb-3">
         <label htmlFor="name" className="text-white block mb-2 font-roboto font-bold">
           Name *:
-          <input
-            id="name"
-            className="w-full p-2 rounded text-black"
-            type="text"
-            name="name"
-            onChange={handleChange}
-            value={newMotor.name}
-            required
-          />
+          <input id="name" className="w-full p-2 rounded text-black" type="text" name="name" />
         </label>
       </div>
       <div className="mb-3">
@@ -26,22 +17,17 @@ function MotorcycleForm({ newMotor, handleChange, handleSubmit }) {
             className="w-full p-2 rounded text-black font-roboto font-bold"
             type="file"
             name="image"
-            required
           />
         </label>
       </div>
       <div className="mb-3">
         <label htmlFor="description" className="text-white block mb-2 font-roboto font-bold">
           Description *:
-          <textarea
+          <input
             id="description"
             className="w-full p-2 rounded text-black font-roboto font-bold"
             type="text"
             name="description"
-            onChange={handleChange}
-            value={newMotor.description}
-            required
-            maxLength="250"
           />
         </label>
       </div>
@@ -53,8 +39,6 @@ function MotorcycleForm({ newMotor, handleChange, handleSubmit }) {
             className="w-full p-2 rounded text-black"
             type="number"
             name="deposit"
-            onChange={handleChange}
-            value={newMotor.deposit}
           />
         </label>
       </div>
@@ -66,8 +50,6 @@ function MotorcycleForm({ newMotor, handleChange, handleSubmit }) {
             className="w-full p-2 rounded text-black"
             type="number"
             name="finance_fee"
-            onChange={handleChange}
-            value={newMotor.finance_fee}
           />
         </label>
       </div>
@@ -79,8 +61,6 @@ function MotorcycleForm({ newMotor, handleChange, handleSubmit }) {
             className="w-full p-2 rounded text-black"
             type="number"
             name="option_to_purchase_fee"
-            onChange={handleChange}
-            value={newMotor.option_to_purchase_fee}
           />
         </label>
       </div>
@@ -92,8 +72,6 @@ function MotorcycleForm({ newMotor, handleChange, handleSubmit }) {
             className="w-full p-2 rounded text-black"
             type="number"
             name="total_amount_payable"
-            onChange={handleChange}
-            value={newMotor.total_amount_payable}
           />
         </label>
       </div>
@@ -105,8 +83,6 @@ function MotorcycleForm({ newMotor, handleChange, handleSubmit }) {
             className="w-full p-2 rounded text-black"
             type="number"
             name="duration"
-            onChange={handleChange}
-            value={newMotor.duration}
           />
         </label>
       </div>
@@ -121,20 +97,3 @@ function MotorcycleForm({ newMotor, handleChange, handleSubmit }) {
     </form>
   );
 }
-
-MotorcycleForm.propTypes = {
-  newMotor: PropTypes.shape({
-    name: PropTypes.string,
-    image: PropTypes.string,
-    description: PropTypes.string,
-    deposit: PropTypes.number,
-    finance_fee: PropTypes.number,
-    option_to_purchase_fee: PropTypes.number,
-    total_amount_payable: PropTypes.number,
-    duration: PropTypes.number,
-  }).isRequired,
-  handleChange: PropTypes.func.isRequired,
-  handleSubmit: PropTypes.func.isRequired,
-};
-
-export default MotorcycleForm;
