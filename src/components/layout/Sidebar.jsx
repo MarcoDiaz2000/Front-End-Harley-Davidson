@@ -8,9 +8,18 @@ import EventIcon from '@mui/icons-material/Event';
 import EventAvailableIcon from '@mui/icons-material/EventAvailable';
 import AddBoxIcon from '@mui/icons-material/AddBox';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import LogoutIcon from '@mui/icons-material/Logout';
+import { useDispatch } from 'react-redux';
 import logo from './logo.png';
+import { logout } from '../../redux/user/userSlice';
 
 export default function Sidebar() {
+  const dispatch = useDispatch();
+
+  const handleLogout = () => {
+    localStorage.removeItem('user'); // Delete user data from localStorage
+    dispatch(logout());
+  };
   const [isMenuOpen] = useState(true);
   const id = 1;
   const menuItems = [
@@ -55,11 +64,19 @@ export default function Sidebar() {
             ))}
         </div>
       </nav>
-      <div className="flex justify-center text-white mt-auto pb-4 hidden md:flex">
-        <TwitterIcon />
-        <FacebookIcon />
-        <InstagramIcon />
+      <div className="flex flex-col gap-3 mt-auto">
+        <button type="button" className=" text-customBg hover:text-customBg" onClick={handleLogout}>
+          <LogoutIcon />
+          {' '}
+          Logout
+        </button>
+        <div className="flex justify-center gap-4 text-white pb-4 hidden md:flex">
+          <TwitterIcon />
+          <FacebookIcon />
+          <InstagramIcon />
+        </div>
       </div>
     </div>
+
   );
 }
