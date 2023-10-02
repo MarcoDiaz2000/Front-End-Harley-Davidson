@@ -10,7 +10,7 @@ function Pagination({ currentPage, totalPages, onPageChange }) {
         <button
           type="button"
           key={generateUniqueKey()}
-          className={`mx-2 px-4 py-2 border ${
+          className={`mx-2 px-4 py-2 border text-white ${
             currentPage === index + 1
               ? 'bg-customBg text-white'
               : 'border-gray-300 hover:bg-customBg hover:text-white'

@@ -23,14 +23,14 @@ function App() {
   const {
     user, isLoading, error, errMsg,
   } = useSelector(usersSelector);
+  const storedUser = localStorage.getItem('user');
   useEffect(() => {
-    const storedUser = localStorage.getItem('user');
     if (storedUser) {
       dispatch(createUser({ username: storedUser }));
     }
-  }, [dispatch]);
+  }, [dispatch, storedUser]);
 
-  if (isLoading) {
+  if (isLoading && storedUser) {
     return (
       <LoadingScreen />
     );
@@ -49,9 +49,7 @@ function App() {
     return (
       <>
         <ToastContainer />
-        <Routes>
-          <Route path="/" element={<SignInPage />} />
-        </Routes>
+        <SignInPage />
       </>
     );
   }
