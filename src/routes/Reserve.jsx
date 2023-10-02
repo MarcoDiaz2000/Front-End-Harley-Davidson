@@ -4,6 +4,7 @@ import ReservationForm from '../components/Reservation/ReservationForm';
 import LoadingScreen from '../components/conditions/LoadingScreen';
 import { bikesSelector } from '../redux/store';
 import { fetchBikes } from '../redux/bikes/thunk';
+import NoRecords from '../components/conditions/NoRecords';
 
 export default function Reserve() {
   const dispatch = useDispatch();
