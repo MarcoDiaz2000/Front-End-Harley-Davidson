@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+ import { NavLink } from 'react-router-dom';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
@@ -13,7 +13,7 @@ import { useDispatch } from 'react-redux';
 import logo from './logo.png';
 import { logout } from '../../redux/user/userSlice';
 
-export default function Sidebar() {
+export default function Sidebar({ toggleSidebar }) {
   const dispatch = useDispatch();
 
   const handleLogout = () => {
@@ -57,18 +57,18 @@ export default function Sidebar() {
                 key={item.label}
                 to={item.to}
                 className="hover:text-customBg pt-2 pb-2 text-customBg small font-medium"
-
+                onClick={toggleSidebar}
               >
                 {item.icon}
               </NavLink>
             ))}
         </div>
       </nav>
-      <div className="flex flex-col gap-3 mt-auto">
-        <button type="button" className=" text-customBg hover:text-customBg" onClick={handleLogout}>
+      <div className="flex flex-col gap-3 md:mt-auto">
+        <button type="button" className=" flex justify-center text-customBg hover:text-customBg" onClick={handleLogout}>
           <LogoutIcon />
           {' '}
-          Logout
+          <span className="hidden md:flex">Logout</span>
         </button>
         <div className="flex justify-center gap-4 text-white pb-4 hidden md:flex">
           <TwitterIcon />
