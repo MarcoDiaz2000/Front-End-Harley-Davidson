@@ -4,10 +4,35 @@ exports[`MotorcycleList renders correctly 1`] = `
 <ul
   className="divide-customBorder"
 >
-  <div
-    className="text-center text-white font-bold"
+  <li
+    className="flex flex-col sm:flex-row justify-between items-center p-2 my-2 rounded-lg bg-white white-shadow-i"
   >
-    Without motorcycles in inventory
-  </div>
+    <span
+      className="font-roboto font-bold text-black"
+    >
+      Motorcycle
+    </span>
+    <button
+      className="p-2 rounded hover:bg-customDark-900 font-roboto font-bold text-white bg-harleyOrange"
+      type="button"
+    >
+      Delete
+    </button>
+  </li>
+  <li
+    className="flex flex-col sm:flex-row justify-between items-center p-2 my-2 rounded-lg bg-white white-shadow-i"
+  >
+    <span
+      className="font-roboto font-bold text-black"
+    >
+      Motorcycle
+    </span>
+    <button
+      className="p-2 rounded hover:bg-customDark-900 font-roboto font-bold text-white bg-harleyOrange"
+      type="button"
+    >
+      Delete
+    </button>
+  </li>
 </ul>
 `;

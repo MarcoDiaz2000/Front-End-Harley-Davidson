@@ -7,7 +7,7 @@ exports[`MotorcycleItem renders correctly 1`] = `
   <span
     className="font-roboto font-bold text-black"
   >
-    Mock Motorcycle
+    Motorcycle
   </span>
   <button
     className="p-2 rounded hover:bg-customDark-900 font-roboto font-bold text-white bg-harleyOrange"

@@ -20,7 +20,7 @@ exports[`AddNew renders correctly 1`] = `
           className="text-white block mb-2 font-roboto font-bold"
           htmlFor="name"
         >
-          Name:
+          Name *:
           <input
             className="w-full p-2 rounded text-black"
             id="name"
@@ -36,7 +36,7 @@ exports[`AddNew renders correctly 1`] = `
           className="text-white block mb-2 font-roboto font-bold"
           htmlFor="image"
         >
-          Image:
+          Image *:
           <input
             className="w-full p-2 rounded text-black font-roboto font-bold"
             id="image"
@@ -52,7 +52,7 @@ exports[`AddNew renders correctly 1`] = `
           className="text-white block mb-2 font-roboto font-bold"
           htmlFor="description"
         >
-          Description:
+          Description *:
           <input
             className="w-full p-2 rounded text-black font-roboto font-bold"
             id="description"
@@ -148,7 +148,7 @@ exports[`AddNew renders correctly 1`] = `
           className="bg-harleyOrange text-white py-3 px-12 rounded hover:bg-orange-700 shadow-md font-roboto font-bold"
           type="submit"
         >
-          Mock Add New Motorcycle
+          Add New Motorcycle
         </button>
       </div>
     </form>
