@@ -22,7 +22,7 @@ export default function Sidebar() {
 
   ];
   return (
-    <div className="flex flex-col gap-12 sticky top-0 h-screen border-r border-customBorder font-roboto bg-bodyBg">
+    <div className="flex flex-col gap-12 sticky top-0 h-screen border-r border-customBorder border-r-0 md:border-r font-roboto bg-bodyBg">
       <div className=" w-full justify-center items-center mt-4 mb-8 hidden md:flex">
         <div className="w-40">
           <img src={logo} alt="Harley Davidson Logo" className="h-auto w-full" />
@@ -41,7 +41,7 @@ export default function Sidebar() {
             </NavLink>
           ))}
         </div>
-        <div className={`flex flex-col ${isMenuOpen && 'md:hidden'} items-center justify-center`}>
+        <div className={`flex flex-col ${isMenuOpen && 'md:hidden'} items-center p-2 justify-center`}>
           {isMenuOpen
             && menuItems.map((item) => (
               <NavLink
