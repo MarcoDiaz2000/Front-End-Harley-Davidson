@@ -8,15 +8,10 @@ import EventIcon from '@mui/icons-material/Event';
 import EventAvailableIcon from '@mui/icons-material/EventAvailable';
 import AddBoxIcon from '@mui/icons-material/AddBox';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
-import MenuIcon from '@mui/icons-material/Menu';
 import logo from './logo.png';
 
 export default function Sidebar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const [isMenuOpen] = useState(true);
   const id = 1;
   const menuItems = [
     { to: '/motors', label: 'MOTORS', icon: <TwoWheelerIcon /> },
@@ -34,13 +29,6 @@ export default function Sidebar() {
         </div>
       </div>
       <nav className="flex flex-col">
-        <button
-          className="hover:text-white hover:bg-customYellow pt-2 pb-2 font-medium md:hidden"
-          onClick={toggleMenu}
-          type="button"
-        >
-          <MenuIcon />
-        </button>
         <div className="hidden md:flex flex-col">
           {menuItems.map((item) => (
             <NavLink
@@ -59,7 +47,7 @@ export default function Sidebar() {
               <NavLink
                 key={item.label}
                 to={item.to}
-                className="hover:text-customBg pt-2 pb-2 small font-medium"
+                className="hover:text-customBg pt-2 pb-2 text-customBg small font-medium"
 
               >
                 {item.icon}
