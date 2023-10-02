@@ -19,6 +19,7 @@ module.exports = {
         bodyBg: '#191719',
         harleyOrange: '#CA5202',
         inputBg: 'rgb(44, 44, 44)',
+        signInMobile: '#fb8622',
       },
     },
   },
