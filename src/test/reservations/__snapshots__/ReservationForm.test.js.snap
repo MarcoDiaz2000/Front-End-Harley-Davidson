@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReservationForm renders correctly 1`] = `
+<div
+  className="reservation-form"
+>
+  <label
+    className="block text-gray-600"
+    htmlFor="date"
+  >
+    Date:
+  </label>
+  <input
+    className="w-full px-4 py-2 rounded-md text-white bg-inputBg focus:bg-inputBg border-gray-300 focus:outline-none focus:border-blue-500"
+    id="date"
+    name="date"
+    type="date"
+  />
+  <label
+    className="block text-gray-600"
+    htmlFor="motorcycle"
+  >
+    Motorcycle:
+  </label>
+  <input
+    className="w-full px-4 py-2 rounded-md text-white focus:outline-none focus:border-blue-500  bg-inputBg focus:bg-inputBg"
+    id="item_id"
+    name="item_id"
+    type="text"
+    value="Mock Motorcycle"
+  />
+  <label
+    className="block text-gray-600"
+    htmlFor="city"
+  >
+    Location:
+  </label>
+  <select
+    className="w-full border-gray-300 focus:outline-none bg-inputBg focus:bg-inputBg focus:border-customBg"
+    id="city"
+    name="city"
+  >
+    <option
+      value="New York"
+    >
+      New York
+    </option>
+    <option
+      value="Los Angeles"
+    >
+      Los Angeles
+    </option>
+    <option
+      value="Chicago"
+    >
+      Chicago
+    </option>
+  </select>
+  <button
+    className="bg-customBg px-4 py-2 rounded-md text-white hover:bg-customDark focus:outline-none"
+    type="submit"
+  >
+    Submit
+  </button>
+</div>
+`;

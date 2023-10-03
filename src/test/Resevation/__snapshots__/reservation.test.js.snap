@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Reservation component snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class=" bg-customBg flex justify-center items-center"
+  >
+    <img
+      alt="motor"
+      class="h-40"
+      src="Item not found"
+    />
+  </div>
+  Item not found2023-10-03Sample City
+  <svg
+    aria-hidden="true"
+    class="svg-inline--fa fa-circle "
+    data-icon="circle"
+    data-prefix="fas"
+    focusable="false"
+    role="img"
+    style="color: rgb(245, 0, 0);"
+    viewBox="0 0 512 512"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z"
+      fill="currentColor"
+    />
+  </svg>
+</DocumentFragment>
+`;
