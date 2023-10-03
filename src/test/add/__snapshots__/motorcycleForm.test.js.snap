@@ -1,0 +1,144 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MotorcycleForm renders correctly 1`] = `
+<form>
+  <div
+    className="mb-3"
+  >
+    <label
+      className="text-white block mb-2 font-roboto font-bold"
+      htmlFor="name"
+    >
+      Name *:
+      <input
+        className="w-full p-2 rounded text-black"
+        id="name"
+        name="name"
+        type="text"
+      />
+    </label>
+  </div>
+  <div
+    className="mb-3"
+  >
+    <label
+      className="text-white block mb-2 font-roboto font-bold"
+      htmlFor="image"
+    >
+      Image *:
+      <input
+        className="w-full p-2 rounded text-black font-roboto font-bold"
+        id="image"
+        name="image"
+        type="file"
+      />
+    </label>
+  </div>
+  <div
+    className="mb-3"
+  >
+    <label
+      className="text-white block mb-2 font-roboto font-bold"
+      htmlFor="description"
+    >
+      Description *:
+      <input
+        className="w-full p-2 rounded text-black font-roboto font-bold"
+        id="description"
+        name="description"
+        type="text"
+      />
+    </label>
+  </div>
+  <div
+    className="mb-3"
+  >
+    <label
+      className="text-white block mb-2 font-roboto font-bold"
+      htmlFor="deposit"
+    >
+      Deposit:
+      <input
+        className="w-full p-2 rounded text-black"
+        id="deposit"
+        name="deposit"
+        type="number"
+      />
+    </label>
+  </div>
+  <div
+    className="mb-3"
+  >
+    <label
+      className="text-white block mb-2 font-roboto font-bold"
+      htmlFor="finance_fee"
+    >
+      Finance Fee:
+      <input
+        className="w-full p-2 rounded text-black"
+        id="finance_fee"
+        name="finance_fee"
+        type="number"
+      />
+    </label>
+  </div>
+  <div
+    className="mb-3"
+  >
+    <label
+      className="text-white block mb-2 font-roboto font-bold"
+      htmlFor="option_to_purchase_fee"
+    >
+      Option to Purchase Fee:
+      <input
+        className="w-full p-2 rounded text-black"
+        id="option_to_purchase_fee"
+        name="option_to_purchase_fee"
+        type="number"
+      />
+    </label>
+  </div>
+  <div
+    className="mb-3"
+  >
+    <label
+      className="text-white block mb-2 font-roboto font-bold"
+      htmlFor="total_amount_payable"
+    >
+      Total Amount Payable:
+      <input
+        className="w-full p-2 rounded text-black"
+        id="total_amount_payable"
+        name="total_amount_payable"
+        type="number"
+      />
+    </label>
+  </div>
+  <div
+    className="mb-3"
+  >
+    <label
+      className="text-white block mb-2 font-roboto font-bold"
+      htmlFor="duration"
+    >
+      Duration:
+      <input
+        className="w-full p-2 rounded text-black"
+        id="duration"
+        name="duration"
+        type="number"
+      />
+    </label>
+  </div>
+  <div
+    className="flex justify-center"
+  >
+    <button
+      className="bg-harleyOrange text-white py-3 px-12 rounded hover:bg-orange-700 shadow-md font-roboto font-bold"
+      type="submit"
+    >
+      Add New Motorcycle
+    </button>
+  </div>
+</form>
+`;
