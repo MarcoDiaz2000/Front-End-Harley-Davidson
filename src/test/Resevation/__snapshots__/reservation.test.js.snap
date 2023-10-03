@@ -34,7 +34,7 @@ exports[`Reservation renders correctly 1`] = `
     className="border border-gray-300 md:px-4 px-2 py-2 hidden md:table-cell text-center"
   >
     <h1>
-      True
+      False
     </h1>
   </td>
 </tr>
