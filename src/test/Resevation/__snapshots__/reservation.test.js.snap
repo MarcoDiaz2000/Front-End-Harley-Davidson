@@ -1,32 +1,41 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Reservation component snapshot 1`] = `
-<DocumentFragment>
-  <div
-    class=" bg-customBg flex justify-center items-center"
+exports[`Reservation renders correctly 1`] = `
+<tr>
+  <td
+    className="border border-gray-300 hidden lg:table-cell"
   >
-    <img
-      alt="motor"
-      class="h-40"
-      src="Item not found"
-    />
-  </div>
-  Item not found2023-10-03Sample City
-  <svg
-    aria-hidden="true"
-    class="svg-inline--fa fa-circle "
-    data-icon="circle"
-    data-prefix="fas"
-    focusable="false"
-    role="img"
-    style="color: rgb(245, 0, 0);"
-    viewBox="0 0 512 512"
-    xmlns="http://www.w3.org/2000/svg"
+    <div
+      className=" bg-customBg flex justify-center items-center"
+    >
+      <img
+        alt="motor"
+        className="h-40"
+        src="anything"
+      />
+    </div>
+  </td>
+  <td
+    className="border border-gray-300 md:px-4 px-2 py-2 text-center"
   >
-    <path
-      d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z"
-      fill="currentColor"
-    />
-  </svg>
-</DocumentFragment>
+    Name
+  </td>
+  <td
+    className="border border-gray-300 md:px-4 px-2 py-2 text-center"
+  >
+    12-12-2012
+  </td>
+  <td
+    className="border border-gray-300 md:px-4 px-2 py-2 md:table-cell text-center"
+  >
+    London
+  </td>
+  <td
+    className="border border-gray-300 md:px-4 px-2 py-2 hidden md:table-cell text-center"
+  >
+    <h1>
+      True
+    </h1>
+  </td>
+</tr>
 `;

@@ -1,22 +1,25 @@
-export const mockReservation = {
-  id: 1,
-  name: 'Sample Name',
-  username_id: 'sample-username',
-  item_id: 'sample-item-id',
-  city: 'Sample City',
-  date: '2023-10-03',
-  removed: false,
-};
+import React from 'react'
 
-export const mockBikes = [
-  {
-    id: 1,
-    name: 'Bike 1',
-    description: 'Sample description',
-    price: 100,
-    image_url: 'sample-image-url',
-    category: 'Sample Category',
-    city: 'Sample City',
-  },
-  // Add more mock bikes as needed
-];
+function Reservation() {
+  return (
+    <tr key={32}>
+      <td className="border border-gray-300 hidden lg:table-cell">
+        <div className=" bg-customBg flex justify-center items-center">
+          <img className="h-40" src='anything' alt="motor" />
+        </div>
+      </td>
+      <td className="border border-gray-300 md:px-4 px-2 py-2 text-center">Name</td>
+      <td className="border border-gray-300 md:px-4 px-2 py-2 text-center">12-12-2012</td>
+      <td className="border border-gray-300 md:px-4 px-2 py-2 md:table-cell text-center">London</td>
+      <td className="border border-gray-300 md:px-4 px-2 py-2 hidden md:table-cell text-center">
+        {false ? (
+          <h1>False</h1>
+        ) : (
+          <h1>True</h1>
+        )}
+      </td>
+    </tr>
+  )
+}
+
+export default Reservation
