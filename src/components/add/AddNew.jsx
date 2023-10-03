@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
-import { useNavigate } from 'react-router-dom';
 import { createBike } from '../../redux/bikes/thunk';
 import MotorcycleForm from './MotorcycleForm';
 
 export default function AddNew() {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const [newMotor, setNewMotor] = useState({
     name: '',
     description: '',
@@ -55,7 +53,6 @@ export default function AddNew() {
       total_amount_payable: 0,
       duration: 0,
     });
-    navigate('/motors');
   };
 
   return (
