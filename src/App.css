@@ -44,9 +44,11 @@
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed; /* This is optional */
+
   @media (max-width: 768px) {
     background-image: url('./images/bg-bikes.jpg');
   }
+
   @media (min-width: 768px) {
     background-image: url('./images/bg-bikes-desktop2.jpg');
     background-position: center center;
