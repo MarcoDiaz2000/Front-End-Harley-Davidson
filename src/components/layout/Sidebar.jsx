@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
@@ -8,15 +9,19 @@ import EventIcon from '@mui/icons-material/Event';
 import EventAvailableIcon from '@mui/icons-material/EventAvailable';
 import AddBoxIcon from '@mui/icons-material/AddBox';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
-import MenuIcon from '@mui/icons-material/Menu';
+import LogoutIcon from '@mui/icons-material/Logout';
+import { useDispatch } from 'react-redux';
 import logo from './logo.png';
+import { logout } from '../../redux/user/userSlice';
 
-export default function Sidebar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+export default function Sidebar({ toggleSidebar }) {
+  const dispatch = useDispatch();
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+  const handleLogout = () => {
+    localStorage.removeItem('user'); // Delete user data from localStorage
+    dispatch(logout());
   };
+  const [isMenuOpen] = useState(true);
   const id = 1;
   const menuItems = [
     { to: '/motors', label: 'MOTORS', icon: <TwoWheelerIcon /> },
@@ -27,20 +32,13 @@ export default function Sidebar() {
 
   ];
   return (
-    <div className="flex flex-col gap-12 sticky top-0 h-screen border-r border-customBorder font-roboto bg-bodyBg">
+    <div className="flex flex-col gap-12 sticky top-0 h-screen border-r border-customBorder border-r-0 md:border-r font-roboto bg-bodyBg">
       <div className=" w-full justify-center items-center mt-4 mb-8 hidden md:flex">
         <div className="w-40">
           <img src={logo} alt="Harley Davidson Logo" className="h-auto w-full" />
         </div>
       </div>
       <nav className="flex flex-col">
-        <button
-          className="hover:text-white hover:bg-customYellow pt-2 pb-2 font-medium md:hidden"
-          onClick={toggleMenu}
-          type="button"
-        >
-          <MenuIcon />
-        </button>
         <div className="hidden md:flex flex-col">
           {menuItems.map((item) => (
             <NavLink
@@ -53,25 +51,37 @@ export default function Sidebar() {
             </NavLink>
           ))}
         </div>
-        <div className={`flex flex-col ${isMenuOpen && 'md:hidden'} items-center justify-center`}>
+        <div className={`flex flex-col ${isMenuOpen && 'md:hidden'} items-center p-2 justify-center`}>
           {isMenuOpen
             && menuItems.map((item) => (
               <NavLink
                 key={item.label}
                 to={item.to}
-                className="hover:text-customBg pt-2 pb-2 small font-medium"
-
+                className="hover:text-customBg pt-2 pb-2 text-customBg small font-medium"
+                onClick={toggleSidebar}
               >
                 {item.icon}
               </NavLink>
             ))}
         </div>
       </nav>
-      <div className="flex justify-center text-white mt-auto pb-4 hidden md:flex">
-        <TwitterIcon />
-        <FacebookIcon />
-        <InstagramIcon />
+      <div className="flex flex-col gap-3 md:mt-auto">
+        <button type="button" className=" flex justify-center text-customBg hover:text-customBg" onClick={handleLogout}>
+          <LogoutIcon />
+          {' '}
+          <span className="hidden md:flex">Logout</span>
+        </button>
+        <div className="flex justify-center gap-4 text-white pb-4 hidden md:flex">
+          <TwitterIcon />
+          <FacebookIcon />
+          <InstagramIcon />
+        </div>
       </div>
     </div>
+
   );
 }
+
+Sidebar.propTypes = {
+  toggleSidebar: PropTypes.func.isRequired,
+};
