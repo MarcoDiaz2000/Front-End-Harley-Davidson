@@ -155,7 +155,7 @@ exports[`List Snapshot matches snapshot 1`] = `
     className="flex justify-center my-4"
   >
     <button
-      className="mx-2 px-4 py-2 border bg-customBg text-white"
+      className="mx-2 px-4 py-2 border text-white bg-customBg text-white"
       onClick={[Function]}
       type="button"
     >
