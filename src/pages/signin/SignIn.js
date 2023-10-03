@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRightToBracket, faUserGear } from '@fortawesome/free-solid-svg-icons';
 import createUser from '../../redux/user/thunk';
 
 const SignInPage = () => {
@@ -27,26 +29,25 @@ const SignInPage = () => {
   };
 
   return (
-    <div className="w-full  h-screen flex justify-center items-center">
-      <div className="w-80 bg-bodyBg rounded-xl pt-14 pb-14 px-6">
-        <form onSubmit={handleSubmit} className="form">
-          <h3 className="text-center font-bold text-white text-2xl pb-6">LogIn</h3>
-          <div className="mb-3">
+    <div className="h-screen flex justify-center items-center sign-in-bg">
+      <div className="bg-bodyBg rounded-xl flex items-center justify-center mt-72 sign-in-form">
+        <form onSubmit={handleSubmit} className="form flex">
+          <div className="flex p-3">
+            <div className="text-white flex items-center px-2">
+              <FontAwesomeIcon icon={faUserGear} />
+            </div>
             <input
-              className="form-control bg-inputBg focus:bg-inputBg focus:outline-none text-white border-none"
+              className="form-control bg-bodyBg focus:bg-inputBg focus:outline-none text-white border-none w-40 px-2 mx-4 py-1 rounded-md placeholder-white md:w-96"
               type="text"
               name="name"
               placeholder="Username"
               onChange={handleChange}
               value={user}
             />
+            <button className="text-white rounded-md bg-signInMobile px-3 mx-2" type="submit">
+              <FontAwesomeIcon icon={faArrowRightToBracket} />
+            </button>
           </div>
-          {/* {error && <div className="text-danger">{error}</div>} */}
-          {/* {' '} */}
-          {/* Display the error message */}
-          <button className="bg-customBg text-white rounded-md hover:bg-customDark pt-1 pb-2" type="submit">
-            LogIn
-          </button>
         </form>
       </div>
     </div>

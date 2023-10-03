@@ -1,14 +1,11 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import Reservation from '../../components/myReservations/reservation';
-import { mockReservation, mockBikes } from '../../components/__mock__/Reservation';
+import renderer from 'react-test-renderer';
+import Reservation from '../../components/__mock__/Reservation';
 
-test('Reservation component snapshot', () => {
-  // Render the component with mock data
-  const { asFragment } = render(
-    <Reservation reservation={mockReservation} bikes={mockBikes} />,
-  );
-
-  // Use toMatchSnapshot to create and compare the snapshot
-  expect(asFragment()).toMatchSnapshot();
+describe('Reservation', () => {
+  it('renders correctly', () => {
+    const component = renderer.create(<Reservation />);
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

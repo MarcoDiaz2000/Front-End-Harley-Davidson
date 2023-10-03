@@ -49,14 +49,14 @@ exports[`List Snapshot matches snapshot 1`] = `
             <img
               alt="motor"
               className="h-40"
-              src="Item not found"
+              src="/images/mountain_bike.jpg"
             />
           </div>
         </td>
         <td
           className="border border-gray-300 md:px-4 px-2 py-2 text-center"
         >
-          Item not found
+          Mountain Bike
         </td>
         <td
           className="border border-gray-300 md:px-4 px-2 py-2 text-center"
@@ -80,7 +80,7 @@ exports[`List Snapshot matches snapshot 1`] = `
             role="img"
             style={
               Object {
-                "color": "#f50000",
+                "color": "#22cc00",
               }
             }
             viewBox="0 0 512 512"
@@ -104,14 +104,14 @@ exports[`List Snapshot matches snapshot 1`] = `
             <img
               alt="motor"
               className="h-40"
-              src="Item not found"
+              src="/images/road_bike.jpg"
             />
           </div>
         </td>
         <td
           className="border border-gray-300 md:px-4 px-2 py-2 text-center"
         >
-          Item not found
+          Road Bike
         </td>
         <td
           className="border border-gray-300 md:px-4 px-2 py-2 text-center"
@@ -135,7 +135,7 @@ exports[`List Snapshot matches snapshot 1`] = `
             role="img"
             style={
               Object {
-                "color": "#f50000",
+                "color": "#22cc00",
               }
             }
             viewBox="0 0 512 512"

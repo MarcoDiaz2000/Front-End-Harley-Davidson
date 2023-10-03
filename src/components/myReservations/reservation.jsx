@@ -31,22 +31,15 @@ export default function Reservation({ reservation, bikes }) {
 Reservation.propTypes = {
   reservation: PropTypes.shape({
     id: PropTypes.number.isRequired,
-    name: PropTypes.string.isRequired,
-    username_id: PropTypes.string.isRequired,
-    item_id: PropTypes.string.isRequired,
+    item_id: PropTypes.number.isRequired,
     city: PropTypes.string.isRequired,
     date: PropTypes.string.isRequired,
-    removed: PropTypes.bool.isRequired,
   }).isRequired,
   bikes: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       name: PropTypes.string.isRequired,
-      description: PropTypes.string.isRequired,
-      price: PropTypes.number.isRequired,
       image_url: PropTypes.string.isRequired,
-      category: PropTypes.string.isRequired,
-      city: PropTypes.string.isRequired,
-    }),
+    }).isRequired,
   ).isRequired,
 };

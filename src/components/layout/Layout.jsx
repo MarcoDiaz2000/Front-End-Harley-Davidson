@@ -17,7 +17,7 @@ export default function Layout({ children }) {
         <Sidebar toggleSidebar={toggleSidebar} />
       </div>
       <div className="md:w-1/5 bg-bodyBg hidden md:block">
-        <Sidebar />
+        <Sidebar toggleSidebar={toggleSidebar} />
       </div>
       <div className="w-full flex flex-col md:w-4/5 overflow-y-auto bg-bodyBg">
         {children}
