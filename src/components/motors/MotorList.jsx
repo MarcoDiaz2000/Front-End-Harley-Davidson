@@ -71,13 +71,11 @@ export default function MotorList({ motorcycles }) {
 }
 
 MotorList.propTypes = {
-  motorcycles: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    name: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
-    image_url: PropTypes.string.isRequired,
-    category: PropTypes.string.isRequired,
-    city: PropTypes.string.isRequired,
-  }).isRequired,
+  motorcycles: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+      image_url: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
 };

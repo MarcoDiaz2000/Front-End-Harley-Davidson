@@ -21,5 +21,9 @@ export default function MotorItem({ motor }) {
 }
 
 MotorItem.propTypes = {
-  motor: PropTypes.node.isRequired,
+  motor: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    image_url: PropTypes.string.isRequired,
+  }).isRequired,
 };

@@ -32,7 +32,7 @@ const SignInPage = () => {
     <div className="h-screen flex justify-center items-center sign-in-bg">
       <div className="bg-bodyBg rounded-xl flex items-center justify-center mt-72 sign-in-form">
         <form onSubmit={handleSubmit} className="form flex">
-          <div className="flex p-4">
+          <div className="flex p-3">
             <div className="text-white flex items-center px-2">
               <FontAwesomeIcon icon={faUserGear} />
             </div>
