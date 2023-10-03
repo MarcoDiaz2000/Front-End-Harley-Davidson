@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pagination Snapshot matches snapshot 1`] = `
+<div
+  className="flex justify-center my-4"
+>
+  <button
+    className="mx-2 px-4 py-2 border text-white bg-customBg text-white"
+    onClick={[Function]}
+    type="button"
+  >
+    1
+  </button>
+  <button
+    className="mx-2 px-4 py-2 border text-white border-gray-300 hover:bg-customBg hover:text-white"
+    onClick={[Function]}
+    type="button"
+  >
+    2
+  </button>
+  <button
+    className="mx-2 px-4 py-2 border text-white border-gray-300 hover:bg-customBg hover:text-white"
+    onClick={[Function]}
+    type="button"
+  >
+    3
+  </button>
+</div>
+`;
