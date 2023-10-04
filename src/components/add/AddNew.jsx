@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
 import { createBike } from '../../redux/bikes/thunk';
 import MotorcycleForm from './MotorcycleForm';
 
 const AddNew = () => {
+  const imageInputRef = useRef(null);
   const dispatch = useDispatch();
   const [newMotor, setNewMotor] = useState({
     name: '',
@@ -53,6 +54,9 @@ const AddNew = () => {
       total_amount_payable: 0,
       duration: 0,
     });
+    if (imageInputRef.current) {
+      imageInputRef.current.value = '';
+    }
   };
 
   return (
@@ -63,6 +67,7 @@ const AddNew = () => {
           newMotor={newMotor}
           handleChange={handleChange}
           handleSubmit={handleSubmit}
+          imageInputRef={imageInputRef}
         />
       </div>
     </div>

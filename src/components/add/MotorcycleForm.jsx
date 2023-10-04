@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const MotorcycleForm = ({ newMotor, handleChange, handleSubmit }) => (
+const MotorcycleForm = ({
+  newMotor, handleChange, handleSubmit, imageInputRef,
+}) => (
   <form onSubmit={(e) => handleSubmit(e)}>
     <div className="mb-3">
       <label htmlFor="name" className="text-white block mb-2 font-roboto font-bold">
@@ -18,9 +20,10 @@ const MotorcycleForm = ({ newMotor, handleChange, handleSubmit }) => (
       </label>
     </div>
     <div className="mb-3">
-      <label htmlFor="image" className="text-white block mb-2 font-bold">
+      <label htmlFor="image" className="text-white block mb-2 font-roboto font-bold">
         Image *:
         <input
+          ref={imageInputRef}
           id="image"
           className="w-full p-2 rounded text-black font-roboto font-bold"
           type="file"
@@ -131,6 +134,10 @@ MotorcycleForm.propTypes = {
     total_amount_payable: PropTypes.number,
     duration: PropTypes.number,
   }).isRequired,
+  imageInputRef: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
+  ]).isRequired,
   handleChange: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
 };

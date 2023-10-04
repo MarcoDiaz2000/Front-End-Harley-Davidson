@@ -29,6 +29,11 @@
   animation: spin 1s linear infinite;
 }
 
+/* Add this CSS to set a fixed width for select elements */
+.fixed-width-select {
+  width: 200px; /* Adjust the width as needed */
+}
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
