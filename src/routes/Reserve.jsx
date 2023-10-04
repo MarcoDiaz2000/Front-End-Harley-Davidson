@@ -6,7 +6,7 @@ import { bikesSelector } from '../redux/store';
 import { fetchBikes } from '../redux/bikes/thunk';
 import NoRecords from '../components/conditions/NoRecords';
 
-export default function Reserve() {
+const Reserve = () => {
   const dispatch = useDispatch();
   const {
     isLoading, error, errorMsg, bikes,
@@ -37,4 +37,5 @@ export default function Reserve() {
       <ReservationForm bikes={bikes} />
     </div>
   );
-}
+};
+export default Reserve;

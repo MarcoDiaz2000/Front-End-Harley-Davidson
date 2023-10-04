@@ -32,7 +32,9 @@ function App() {
 
   if (isLoading && storedUser) {
     return (
-      <LoadingScreen />
+      <Layout>
+        <LoadingScreen />
+      </Layout>
     );
   }
 

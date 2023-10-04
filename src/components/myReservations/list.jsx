@@ -30,7 +30,7 @@ const List = ({ allReservations, bikes }) => {
 
   return (
     <div className="flex flex-col justify-between">
-      <table className="border-collapse border border-gray-300 mx-auto mt-12 bg-white drop-shadow-md w-11/12">
+      <table className=" border border-gray-300 mx-auto mt-12 bg-white drop-shadow-md w-11/12 border-separate rounded-lg">
         <thead>
           <tr className="text-center">
             <th className="border border-gray-300 px-4 py-4 bg-customBg text-white hidden lg:table-cell">Thumbnail</th>
@@ -38,7 +38,9 @@ const List = ({ allReservations, bikes }) => {
             <th className="border border-gray-300 px-4 py-4 bg-customBg text-white">Date</th>
             <th className="border border-gray-300 px-4 py-4 bg-customBg text-white md:table-cell">City</th>
             <th className="border border-gray-300 px-4 py-4 bg-customBg text-white hidden md:table-cell">
-              Stat
+              Bike
+              <br />
+              Availability
             </th>
           </tr>
         </thead>

@@ -5,7 +5,7 @@ exports[`List Snapshot matches snapshot 1`] = `
   className="flex flex-col justify-between"
 >
   <table
-    className="border-collapse border border-gray-300 mx-auto mt-12 bg-white drop-shadow-md w-11/12"
+    className=" border border-gray-300 mx-auto mt-12 bg-white drop-shadow-md w-11/12 border-separate rounded-lg"
   >
     <thead>
       <tr
