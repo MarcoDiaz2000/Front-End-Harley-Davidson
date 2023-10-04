@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import AddNew from '../components/add/AddNew';
 
-export default function AddNewRoute() {
+const AddNewRoute = () => {
   const { error, errorMsg } = useSelector((state) => state.bikes);
 
   if (error) {
@@ -19,4 +19,5 @@ export default function AddNewRoute() {
       <AddNew />
     </div>
   );
-}
+};
+export default AddNewRoute;

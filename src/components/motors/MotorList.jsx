@@ -5,7 +5,7 @@ import Slider from 'react-slick';
 import PropTypes from 'prop-types';
 import MotorItem from './MotorItem';
 
-export default function MotorList({ motorcycles }) {
+const MotorList = ({ motorcycles }) => {
   const bikes = motorcycles;
   const settings = {
     dots: true,
@@ -68,7 +68,8 @@ export default function MotorList({ motorcycles }) {
       </Slider>
     </div>
   );
-}
+};
+export default MotorList;
 
 MotorList.propTypes = {
   motorcycles: PropTypes.arrayOf(

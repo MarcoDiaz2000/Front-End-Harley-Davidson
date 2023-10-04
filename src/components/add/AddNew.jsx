@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 import { createBike } from '../../redux/bikes/thunk';
 import MotorcycleForm from './MotorcycleForm';
 
-export default function AddNew() {
+const AddNew = () => {
   const imageInputRef = useRef(null);
   const dispatch = useDispatch();
   const [newMotor, setNewMotor] = useState({
@@ -72,4 +72,5 @@ export default function AddNew() {
       </div>
     </div>
   );
-}
+};
+export default AddNew;

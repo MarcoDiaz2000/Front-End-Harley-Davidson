@@ -14,7 +14,7 @@ import { useDispatch } from 'react-redux';
 import logo from './logo.png';
 import { logout } from '../../redux/user/userSlice';
 
-export default function Sidebar({ toggleSidebar }) {
+const Sidebar = ({ toggleSidebar }) => {
   const dispatch = useDispatch();
 
   const handleLogout = () => {
@@ -80,7 +80,8 @@ export default function Sidebar({ toggleSidebar }) {
     </div>
 
   );
-}
+};
+export default Sidebar;
 
 Sidebar.propTypes = {
   toggleSidebar: PropTypes.func.isRequired,

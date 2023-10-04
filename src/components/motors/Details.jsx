@@ -5,7 +5,7 @@ import { bikesSelector } from '../../redux/store';
 import { fetchBike } from '../../redux/bikes/thunk';
 import LoadingScreen from '../conditions/LoadingScreen';
 
-export default function Details() {
+const Details = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const {
@@ -97,4 +97,5 @@ export default function Details() {
       </div>
     </div>
   );
-}
+};
+export default Details;

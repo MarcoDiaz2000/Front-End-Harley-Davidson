@@ -4,7 +4,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import Sidebar from './Sidebar';
 
-export default function Layout({ children }) {
+const Layout = ({ children }) => {
   const [showSidebar, setShowSidebar] = useState(false);
 
   const toggleSidebar = () => {
@@ -29,7 +29,8 @@ export default function Layout({ children }) {
       </div>
     </div>
   );
-}
+};
+export default Layout;
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,

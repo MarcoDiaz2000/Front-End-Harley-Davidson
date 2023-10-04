@@ -32,7 +32,9 @@ function App() {
 
   if (isLoading && storedUser) {
     return (
-      <LoadingScreen />
+      <Layout>
+        <LoadingScreen />
+      </Layout>
     );
   }
 
@@ -59,6 +61,7 @@ function App() {
       <ToastContainer />
       <Layout>
         <Routes>
+          <Route path="/" element={<Main />} />
           <Route path="/motors" element={<Main />} />
           <Route path="/myReservations" element={<MyReservations />} />
           <Route path="/reserve/:id" element={<Reserve />} />
