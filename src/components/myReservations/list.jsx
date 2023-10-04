@@ -34,11 +34,11 @@ const List = ({ allReservations, bikes }) => {
         <thead>
           <tr className="text-center">
             <th className="border border-gray-300 px-4 py-4 bg-customBg text-white hidden lg:table-cell">Thumbnail</th>
-            <th className="border border-gray-300 px-4 py-4 bg-customBg text-white">Bike</th>
+            <th className="border border-gray-300 px-4 py-4 bg-customBg text-white">Motor</th>
             <th className="border border-gray-300 px-4 py-4 bg-customBg text-white">Date</th>
             <th className="border border-gray-300 px-4 py-4 bg-customBg text-white md:table-cell">City</th>
             <th className="border border-gray-300 px-4 py-4 bg-customBg text-white hidden md:table-cell">
-              Bike
+              Motor
               <br />
               Availability
             </th>

@@ -34,7 +34,9 @@ exports[`List Snapshot matches snapshot 1`] = `
         <th
           className="border border-gray-300 px-4 py-4 bg-customBg text-white hidden md:table-cell"
         >
-          Stat
+          Bike
+          <br />
+          Availability
         </th>
       </tr>
     </thead>
@@ -61,7 +63,9 @@ exports[`List Snapshot matches snapshot 1`] = `
         <td
           className="border border-gray-300 md:px-4 px-2 py-2 text-center"
         >
-          2023-10-15
+          2023
+          <br />
+          10-15
         </td>
         <td
           className="border border-gray-300 md:px-4 px-2 py-2 md:table-cell text-center"
@@ -116,7 +120,9 @@ exports[`List Snapshot matches snapshot 1`] = `
         <td
           className="border border-gray-300 md:px-4 px-2 py-2 text-center"
         >
-          2023-10-20
+          2023
+          <br />
+          10-20
         </td>
         <td
           className="border border-gray-300 md:px-4 px-2 py-2 md:table-cell text-center"
