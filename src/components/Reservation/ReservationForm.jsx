@@ -4,6 +4,7 @@ import {
 } from 'formik';
 import * as Yup from 'yup';
 import Select from 'react-select';
+import { FaSearch } from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -81,83 +82,100 @@ const ReservationForm = ({ bikes }) => {
   });
 
   return (
-    <div className="flex flex-col mx-auto  p-4">
-      <h2 className="text-2xl text-white font-semibold mb-4">
-        Reservation
-        {filteredBikes.name}
-      </h2>
+    <div className="flex flex-col items-center justify-center h-screen mx-auto p-4">
+      <div className="p-4 rounded-xl">
+        <div className="text-center mb-4">
+          <h2 className="text-2xl text-white font-semibold mb-2">
+            Book a Harley Davidson Test Ride
+          </h2>
+          <p className="text-gray-600 mx-auto max-w-md">
+            Experience the thrill of a Harley Davidson test ride.
+            There are 34 different versions of Harley Davidson.
+            Today, five series are in production: the classic manual
+            transmission Px and the modern CVT transmission
+            S, LX, GT, and GTS.
+            We have showrooms all over the globe which some include test
+            riding facilities.
+            If you wish to find out if a test ride is available in
+            your area, then choose your date, location, and bike below.
+          </p>
+        </div>
+      </div>
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
       >
         <Form>
-          <div className="mb-4 hidden">
-            <label htmlFor="name" className="block text-gray-600">Name:</label>
-            <Field
-              type="number"
-              id="user_id"
-              name="user_id"
-              placeholder="name"
-              value={initialValues.user_id}
-              className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none  focus:border-blue-500  bg-inputBg focus:bg-inputBg"
-            />
-            <ErrorMessage name="name" component="div" className="text-red-600" />
-          </div>
           <div className="mb-4">
-            <label htmlFor="date" className="block text-gray-600">Date:</label>
             <Field
               type="date"
               id="date"
               name="date"
-              className="w-full px-4 py-2 rounded-md text-white bg-inputBg focus:bg-inputBg border-gray-300 focus:outline-none focus:border-blue-500"
+              className="w-full px-4 py-2 rounded-md border-gray-300 text-white focus:outline-none  focus:border-blue-500  bg-inputBg focus:bg-inputBg"
             />
             <ErrorMessage name="date" component="div" className="text-red-600" />
           </div>
           {filteredBikes.length > 0 ? (
             <div className="mb-4">
-              <label htmlFor="motorcycle" className="block text-gray-600">Motorcycle:</label>
-              <Field
-                type="text"
+              <Select
                 id="item_id"
                 name="item_id"
-                className="w-full px-4 py-2 rounded-md text-white focus:outline-none focus:border-blue-500  bg-inputBg focus:bg-inputBg"
-                value={filteredBikes[0].name}
+                options={[
+                  { value: '', label: 'Select a Motorcycle' }, // Add this placeholder option
+                  ...items,
+                ]}
+                value={selectedItem}
+                onChange={handleItemChange}
+                className="w-full fixed-width-select"
               />
               <ErrorMessage name="item_id" component="div" className="text-red-600" />
             </div>
           ) : (
             <div className="mb-4">
-              <label htmlFor="bike" className="block text-gray-600">Bike:</label>
               <Select
                 id="item_id"
                 name="item_id"
-                options={items}
+                options={[
+                  { value: '', label: 'Select a Bike' }, // Add this placeholder option
+                  ...items,
+                ]}
                 value={selectedItem}
                 onChange={handleItemChange}
-                className="w-full  border-gray-300 focus:outline-none focus:border-blue-500"
+                className="w-full border-gray-300 w-full fixed-width-select focus:outline-none focus:border-blue-500 custom-select"
               />
               <ErrorMessage name="item_id" component="div" className="text-red-600" />
             </div>
           )}
           <div className="mb-4">
-            <label htmlFor="city" className="block text-gray-600">Location:</label>
             <Select
               id="city"
               name="city"
-              options={cities}
-              className="w-full border-gray-300 focus:outline-none bg-inputBg focus:bg-inputBg focus:border-customBg"
+              options={[
+                { value: '', label: 'Location' }, // Add this placeholder option
+                ...cities,
+              ]}
+              className="w-full border-gray-300 w-full fixed-width-select focus:outline-none bg-inputBg focus:bg-inputBg focus:border-customBg custom-select"
               value={selectedCity}
               onChange={handleCityChange}
             />
             <ErrorMessage name="city" component="div" className="text-red-600" />
           </div>
-          <button
-            type="submit"
-            className="bg-customBg px-4 py-2 rounded-md text-white hover:bg-customDark focus:outline-none"
-          >
-            Submit
-          </button>
+          <div className="mb-4 text-center">
+            {' '}
+            {/* Add text-center class for center alignment */}
+            <button
+              type="submit"
+              className="bg-customBg px-4 py-2 rounded-md text-white hover:bg-customDark focus:outline-none"
+            >
+              Book now
+            </button>
+            <div className="fixed top-0 right-0 m-4">
+              <div className="relative">
+                <FaSearch className="absolute top-0 right-0 text-gray-400 pointer-events-none" />
+              </div>
+            </div>
+          </div>
         </Form>
       </Formik>
     </div>
