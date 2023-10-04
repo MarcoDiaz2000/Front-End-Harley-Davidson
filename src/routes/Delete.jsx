@@ -5,7 +5,7 @@ import LoadingScreen from '../components/conditions/LoadingScreen';
 import NoRecords from '../components/conditions/NoRecords';
 import MotorcycleList from '../components/delete/MotorcycleList';
 
-export default function Delete() {
+const Delete = () => {
   const dispatch = useDispatch();
   const {
     bikes, isLoading, error, errorMsg,
@@ -40,4 +40,5 @@ export default function Delete() {
       </div>
     </div>
   );
-}
+};
+export default Delete;

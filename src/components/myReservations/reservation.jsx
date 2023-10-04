@@ -6,8 +6,6 @@ import getItemName from './functions/getItemName';
 import getItemImage from './functions/getItemImage';
 import getItemStat from './functions/getItemStat';
 
-export default function Reservation({ reservation, bikes }) {
-  return (
     <tr key={reservation.id}>
       <td className="border border-gray-300 hidden lg:table-cell">
         <div className=" bg-customBg flex justify-center items-center">
@@ -27,6 +25,8 @@ export default function Reservation({ reservation, bikes }) {
     </tr>
   );
 }
+const Reservation = ({ reservation, bikes }) => (
+export default Reservation;
 
 Reservation.propTypes = {
   reservation: PropTypes.shape({

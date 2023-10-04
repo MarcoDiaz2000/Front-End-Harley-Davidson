@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 import { createBike } from '../../redux/bikes/thunk';
 import MotorcycleForm from './MotorcycleForm';
 
-export default function AddNew() {
+const AddNew = () => {
   const dispatch = useDispatch();
   const [newMotor, setNewMotor] = useState({
     name: '',
@@ -67,4 +67,5 @@ export default function AddNew() {
       </div>
     </div>
   );
-}
+};
+export default AddNew;

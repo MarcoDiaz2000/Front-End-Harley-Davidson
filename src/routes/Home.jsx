@@ -6,7 +6,7 @@ import { fetchBikes } from '../redux/bikes/thunk';
 import LoadingScreen from '../components/conditions/LoadingScreen';
 import NoRecords from '../components/conditions/NoRecords';
 
-export default function Home() {
+const Home = () => {
   const dispatch = useDispatch();
   const bikes = useSelector(bikesSelector);
 
@@ -39,4 +39,5 @@ export default function Home() {
       <MotorList motorcycles={bikes.bikes} />
     </div>
   );
-}
+};
+export default Home;

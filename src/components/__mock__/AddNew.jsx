@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import MotorcycleForm from './MotorcycleForm';
 
-export default function MockAddNew() {
+const MockAddNew = () => {
   const [newMotor, setNewMotor] = useState({
     name: '',
     description: '',
@@ -36,4 +36,5 @@ export default function MockAddNew() {
       </div>
     </div>
   );
-}
+};
+export default MockAddNew;

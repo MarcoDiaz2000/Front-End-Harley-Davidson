@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Pagination({ currentPage, totalPages, onPageChange }) {
+const Pagination = ({ currentPage, totalPages, onPageChange }) => {
   const generateUniqueKey = () => `button_${Math.random().toString(36).substring(2)}`;
 
   return (
@@ -22,7 +22,7 @@ function Pagination({ currentPage, totalPages, onPageChange }) {
       ))}
     </div>
   );
-}
+};
 
 Pagination.propTypes = {
   currentPage: PropTypes.number.isRequired,

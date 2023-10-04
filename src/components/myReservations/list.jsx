@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Reservation from './reservation';
 import Pagination from './pagination'; // Import the Pagination component
 
-export default function List({ allReservations, bikes }) {
+const List = ({ allReservations, bikes }) => {
   // Define the number of reservations per page
   const reservationsPerPage = 5;
 
@@ -57,7 +57,8 @@ export default function List({ allReservations, bikes }) {
       />
     </div>
   );
-}
+};
+export default List;
 
 List.propTypes = {
   allReservations: PropTypes.arrayOf(
