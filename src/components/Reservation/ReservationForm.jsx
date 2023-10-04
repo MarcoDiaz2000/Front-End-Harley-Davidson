@@ -51,10 +51,8 @@ const ReservationForm = ({ bikes }) => {
       city: selectedCity.value,
       item_id: selectedItem ? selectedItem.value : values.item_id,
     };
-    console.log(updatedValues);
     dispatch(createReservation({ reservation: updatedValues }));
     toast.success('You have successfully reserved a Motorbike');
-    console.log(values);
     setSubmitting(false);
   };
 

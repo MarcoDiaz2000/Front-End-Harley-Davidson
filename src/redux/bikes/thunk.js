@@ -27,7 +27,6 @@ export const fetchBike = createAsyncThunk('bikes/fetchBike', async ({ id }, thun
 // Create bike
 export const createBike = createAsyncThunk('bikes/createBike', async ({ data }, thunkAPI) => {
   try {
-    console.log('data', data);
     const response = await axios.post(url, data);
     return response.data;
   } catch (error) {
