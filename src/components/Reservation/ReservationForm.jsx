@@ -88,16 +88,12 @@ const ReservationForm = ({ bikes }) => {
           <h2 className="text-2xl text-white font-semibold mb-2">
             Book a Harley Davidson Test Ride
           </h2>
-          <p className="text-gray-600 mx-auto max-w-md">
-            Experience the thrill of a Harley Davidson test ride.
+          <p className="text-gray-600 mx-auto max-w-2xl">
             There are 34 different versions of Harley Davidson.
-            Today, five series are in production: the classic manual
-            transmission Px and the modern CVT transmission
-            S, LX, GT, and GTS.
             We have showrooms all over the globe which some include test
             riding facilities.
             If you wish to find out if a test ride is available in
-            your area, then choose your date, location, and bike below.
+            your area, then choose your date, bike, and location below.
           </p>
         </div>
       </div>
@@ -114,20 +110,24 @@ const ReservationForm = ({ bikes }) => {
               name="date"
               className="w-full px-4 py-2 rounded-md border-gray-300 text-white focus:outline-none  focus:border-blue-500  bg-inputBg focus:bg-inputBg"
             />
+            {/* Add a CSS class to target the date input's icon */}
+            <style>
+              {`
+      #date::-webkit-calendar-picker-indicator {
+        filter: invert(1); /* Invert the icon color to white */
+      }
+    `}
+            </style>
             <ErrorMessage name="date" component="div" className="text-red-600" />
           </div>
           {filteredBikes.length > 0 ? (
             <div className="mb-4">
-              <Select
+              <Field
+                type="text"
                 id="item_id"
                 name="item_id"
-                options={[
-                  { value: '', label: 'Select a Motorcycle' }, // Add this placeholder option
-                  ...items,
-                ]}
-                value={selectedItem}
-                onChange={handleItemChange}
-                className="w-full fixed-width-select"
+                className="w-full px-4 py-2 rounded-md text-white focus:outline-none focus:border-blue-500 bg-inputBg focus:bg-inputBg"
+                value={filteredBikes[0].name}
               />
               <ErrorMessage name="item_id" component="div" className="text-red-600" />
             </div>
@@ -142,7 +142,7 @@ const ReservationForm = ({ bikes }) => {
                 ]}
                 value={selectedItem}
                 onChange={handleItemChange}
-                className="w-full border-gray-300 w-full fixed-width-select focus:outline-none focus:border-blue-500 custom-select"
+                className="w-full border-gray-300 fixed-width-select focus:outline-none focus:border-blue-500 custom-select"
               />
               <ErrorMessage name="item_id" component="div" className="text-red-600" />
             </div>
@@ -155,7 +155,7 @@ const ReservationForm = ({ bikes }) => {
                 { value: '', label: 'Location' }, // Add this placeholder option
                 ...cities,
               ]}
-              className="w-full border-gray-300 w-full fixed-width-select focus:outline-none bg-inputBg focus:bg-inputBg focus:border-customBg custom-select"
+              className="w-full rounded-md border-gray-300 text-black focus:outline-none  focus:border-blue-500  bg-inputBg focus:bg-inputBg"
               value={selectedCity}
               onChange={handleCityChange}
             />
