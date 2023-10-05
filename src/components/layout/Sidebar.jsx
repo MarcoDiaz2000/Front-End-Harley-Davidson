@@ -25,8 +25,8 @@ const Sidebar = ({ toggleSidebar }) => {
   const id = 1;
   const menuItems = [
     { to: '/motors', label: 'MOTORS', icon: <TwoWheelerIcon /> },
-    { to: '/myReservations', label: 'MY RESERVATIONS', icon: <EventAvailableIcon /> },
     { to: '/reserve', label: 'RESERVE', icon: <EventIcon /> },
+    { to: '/myReservations', label: 'MY RESERVATIONS', icon: <EventAvailableIcon /> },
     { to: `/add/${id}`, label: 'ADD MOTOR', icon: <AddBoxIcon /> },
     { to: `/delete/${id}`, label: 'DELETE', icon: <DeleteForeverIcon /> },
 
