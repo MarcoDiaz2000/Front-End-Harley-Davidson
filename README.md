@@ -59,12 +59,6 @@ The project we built for the Final Project is based on an app to book an appoint
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 🔭 Video Presentation <a name="video"></a>
-
-- [Video Presentation](#)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
