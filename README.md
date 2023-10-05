@@ -14,6 +14,7 @@
   - [Install](#install)
   - [Usage](#usage)
 - [👥 Authors](#authors)
+- [📆 Kanban Board](#kanban-board)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
@@ -54,7 +55,7 @@ The project we built for the Final Project is based on an app to book an appoint
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](#) 
+- [Live Demo Link](https://harley-davidson-73po.onrender.com/) 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -125,6 +126,16 @@ npm start
 - GitHub: [@githubhandle](https://github.com/tamoorsaeed22)
 - Twitter: [@twitterhandle](https://www.linkedin.com/in/tamoor-saeed-58912a233/)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/tamoorsaeed/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- Kanban Board -->
+
+## 📆 Kanban Board <a name="kanban-board"></a>
+
+- [Our kanban board](https://github.com/Salimer/Final-Capstone-Back-End/projects/1)
+- [Kanban board initial state](https://user-images.githubusercontent.com/125866339/269276243-8a11c76f-a047-43ac-a45a-6bcf02e168be.jpg)
+- We are a team of 4 members as stated in the authors section
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
