@@ -32,7 +32,7 @@ const Details = () => {
   }
   return (
     <div className="relative w-full h-full">
-      <div className="w-full h-full flex justify-center items-center flex-col md:flex-row gap-2 px-4 py-4 font-roboto">
+      <div className="w-full h-full flex justify-center items-center flex-col md:flex-row gap-2 px-4 py-4 font-roboto mt-10 md:mt-0">
         <div className="flex flex-grow justify-center item-center rounded-2xl bg-gray-100">
           <div className="flex items-center justify-center">
             <img className="w-full h-96" src={bike.image_url} alt="img" />
@@ -47,7 +47,7 @@ const Details = () => {
               - $
               {bike.deposit}
               {' '}
-              deposit upon any Vespa purchase
+              deposit upon any purchase
             </p>
           </div>
           <ul>
@@ -69,7 +69,7 @@ const Details = () => {
               <span>Total amount of payable</span>
               <span>
                 $
-                {bike.option_to_purchase_fee}
+                {bike.total_amount_payable}
               </span>
             </li>
             <li className="py-2 px-2 flex justify-between text-white text-sm">
@@ -92,7 +92,7 @@ const Details = () => {
           </div>
         </div>
       </div>
-      <div className="absolute md:top-3/4 left-6 pb-4 mt-20">
+      <div className="absolute md:top-3/4 md:left-6 pb-4 md:mt-20 top-3 right-5">
         <Link to="/motors" className="px-8 pb-2 pt-1 rounded-lg text-white bg-customBg shadow-md hover:bg-customDark" type="button">Back</Link>
       </div>
     </div>

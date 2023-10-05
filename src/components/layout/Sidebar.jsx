@@ -32,7 +32,7 @@ const Sidebar = ({ toggleSidebar }) => {
 
   ];
   return (
-    <div className="flex flex-col gap-12 sticky top-0 h-screen border-r border-customBorder border-r-0 md:border-r font-roboto bg-bodyBg">
+    <div className="flex flex-col gap-12 sticky bg-customBg  top-0 h-80 md:h-screen rounded-3xl md:rounded-none border-customBorder border-r-0 md:border-r font-roboto md:bg-bodyBg">
       <div className=" w-full justify-center items-center mt-4 mb-8 hidden md:flex">
         <div className="w-40">
           <img src={logo} alt="Harley Davidson Logo" className="h-auto w-full" />
@@ -57,7 +57,7 @@ const Sidebar = ({ toggleSidebar }) => {
               <NavLink
                 key={item.label}
                 to={item.to}
-                className="hover:text-customBg pt-2 pb-2 text-customBg small font-medium"
+                className="hover:text-customBg pt-2 pb-2 text-black small font-medium"
                 onClick={toggleSidebar}
               >
                 {item.icon}
@@ -66,7 +66,7 @@ const Sidebar = ({ toggleSidebar }) => {
         </div>
       </nav>
       <div className="flex flex-col gap-3 md:mt-auto">
-        <button type="button" className=" flex justify-center text-customBg hover:text-customBg" onClick={handleLogout}>
+        <button type="button" className=" flex justify-center text-black md:text-customBg hover:text-customBg" onClick={handleLogout}>
           <LogoutIcon />
           {' '}
           <span className="hidden md:flex">Logout</span>
@@ -78,7 +78,6 @@ const Sidebar = ({ toggleSidebar }) => {
         </div>
       </div>
     </div>
-
   );
 };
 export default Sidebar;

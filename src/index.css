@@ -32,8 +32,7 @@ body {
 }
 
 a.small.active {
-  background-color: white;
-  color: rgb(252, 99, 0);
+  color: #fff !important;
 }
 
 code {

@@ -13,7 +13,7 @@ const Layout = ({ children }) => {
 
   return (
     <div className="flex w-full relative h-screen">
-      <div className={`md:w-1/5 top-8 absolute z-1 md:hidden bg-bodyBg transition-all duration-300 transform ${showSidebar ? 'translate-y-0' : '-translate-y-full'}`}>
+      <div className={`md:w-1/5 top-0 absolute z-1 md:hidden transition-all duration-300 transform ${showSidebar ? 'translate-y-0 mt-20' : '-translate-y-full'}`}>
         <Sidebar toggleSidebar={toggleSidebar} />
       </div>
       <div className="md:w-1/5 bg-bodyBg hidden md:block">
