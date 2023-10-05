@@ -66,12 +66,12 @@ const Sidebar = ({ toggleSidebar }) => {
         </div>
       </nav>
       <div className="flex flex-col gap-3 md:mt-auto">
-        <button type="button" className=" flex justify-center text-black md:text-customBg hover:text-customBg" onClick={handleLogout}>
+        <button type="button" className="flex justify-center md:text-customBg hover:text-customBg" onClick={handleLogout}>
           <LogoutIcon />
           {' '}
           <span className="hidden md:flex">Logout</span>
         </button>
-        <div className="flex justify-center gap-4 text-white pb-4 hidden md:flex">
+        <div className="justify-center gap-4 text-white pb-4 hidden md:flex">
           <TwitterIcon />
           <FacebookIcon />
           <InstagramIcon />
