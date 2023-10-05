@@ -1,0 +1,172 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List Snapshot matches snapshot 1`] = `
+<div
+  className="flex flex-col justify-between"
+>
+  <table
+    className=" border border-gray-300 mx-auto mt-12 bg-white drop-shadow-md w-11/12 border-separate rounded-lg"
+  >
+    <thead>
+      <tr
+        className="text-center"
+      >
+        <th
+          className="border border-gray-300 px-4 py-4 bg-customBg text-white hidden lg:table-cell"
+        >
+          Thumbnail
+        </th>
+        <th
+          className="border border-gray-300 px-4 py-4 bg-customBg text-white"
+        >
+          Bike
+        </th>
+        <th
+          className="border border-gray-300 px-4 py-4 bg-customBg text-white"
+        >
+          Date
+        </th>
+        <th
+          className="border border-gray-300 px-4 py-4 bg-customBg text-white md:table-cell"
+        >
+          City
+        </th>
+        <th
+          className="border border-gray-300 px-4 py-4 bg-customBg text-white hidden md:table-cell"
+        >
+          Bike
+          <br />
+          Availability
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td
+          className="border border-gray-300 hidden lg:table-cell"
+        >
+          <div
+            className=" bg-customBg flex justify-center items-center"
+          >
+            <img
+              alt="motor"
+              className="h-40"
+              src="/images/mountain_bike.jpg"
+            />
+          </div>
+        </td>
+        <td
+          className="border border-gray-300 md:px-4 px-2 py-2 text-center"
+        >
+          Mountain Bike
+        </td>
+        <td
+          className="border border-gray-300 md:px-4 px-2 py-2 text-center"
+        >
+          2023
+          <br />
+          10-15
+        </td>
+        <td
+          className="border border-gray-300 md:px-4 px-2 py-2 md:table-cell text-center"
+        >
+          New York
+        </td>
+        <td
+          className="border border-gray-300 md:px-4 px-2 py-2 hidden md:table-cell text-center"
+        >
+          <svg
+            aria-hidden="true"
+            className="svg-inline--fa fa-circle "
+            data-icon="circle"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            style={
+              Object {
+                "color": "#22cc00",
+              }
+            }
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z"
+              fill="currentColor"
+              style={Object {}}
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="border border-gray-300 hidden lg:table-cell"
+        >
+          <div
+            className=" bg-customBg flex justify-center items-center"
+          >
+            <img
+              alt="motor"
+              className="h-40"
+              src="/images/road_bike.jpg"
+            />
+          </div>
+        </td>
+        <td
+          className="border border-gray-300 md:px-4 px-2 py-2 text-center"
+        >
+          Road Bike
+        </td>
+        <td
+          className="border border-gray-300 md:px-4 px-2 py-2 text-center"
+        >
+          2023
+          <br />
+          10-20
+        </td>
+        <td
+          className="border border-gray-300 md:px-4 px-2 py-2 md:table-cell text-center"
+        >
+          Los Angeles
+        </td>
+        <td
+          className="border border-gray-300 md:px-4 px-2 py-2 hidden md:table-cell text-center"
+        >
+          <svg
+            aria-hidden="true"
+            className="svg-inline--fa fa-circle "
+            data-icon="circle"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            style={
+              Object {
+                "color": "#22cc00",
+              }
+            }
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z"
+              fill="currentColor"
+              style={Object {}}
+            />
+          </svg>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div
+    className="flex justify-center my-4"
+  >
+    <button
+      className="mx-2 px-4 py-2 border text-white bg-customBg text-white"
+      onClick={[Function]}
+      type="button"
+    >
+      1
+    </button>
+  </div>
+</div>
+`;
