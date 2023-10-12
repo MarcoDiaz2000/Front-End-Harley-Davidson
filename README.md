@@ -1,3 +1,6 @@
+
+![Harley](https://github.com/MarcoDiaz2000/Front-End-Harley-Davidson/assets/125866339/bded6024-c31e-410f-84b6-384af2ff66e6)
+
 <a name="readme-top"></a>
 
 # 📗 Table of Contents 
